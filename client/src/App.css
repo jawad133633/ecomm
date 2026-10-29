@@ -2891,6 +2891,108 @@
   margin: 0;
 }
 
+.admin-auth-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: radial-gradient(ellipse at 50% 10%, #ccfbf1 0%, #f8fafc 60%);
+}
+
+.admin-auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 36px 30px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+.admin-auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.admin-auth-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #0f766e;
+  background: #f0fdfa;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #99f6e4;
+}
+
+.admin-auth-heading h2 {
+  font-size: clamp(24px, 5.5vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.admin-auth-heading p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.admin-auth-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.admin-link-button {
+  background: none;
+  border: none;
+  color: #0f766e;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.admin-link-button:hover {
+  background: #f0fdfa;
+  color: #115e59;
+}
+
+.admin-auth-back {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 4px 8px;
+}
+
+.admin-auth-back:hover {
+  color: #475569;
+}
+
+@media (max-width: 480px) {
+  .admin-auth-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+}
+
+
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
