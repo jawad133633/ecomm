@@ -8,7 +8,7 @@ const getProducts = async (req, res) => {
   try {
     // Keep sold-out products visible in the marketplace; stock controls purchasing,
     // not whether the product exists in the catalog.
-    const filter = {};
+    const filter = { isAvailable: { $ne: false } };
     if (req.query.category) filter.category = req.query.category;
     if (req.query.search) {
       const safeSearch = req.query.search.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -18,7 +18,7 @@ const getProducts = async (req, res) => {
     const page = Math.max(1, Math.min(100000, Number.parseInt(req.query.page, 10) || 1));
     const limit = Math.max(1, Math.min(60, Number.parseInt(req.query.limit, 10) || 60));
     const [products, total] = await Promise.all([
-      Product.find(filter).select('name description price imageUrl category stock store createdAt').populate('store', 'name slug').sort(sort).skip((page - 1) * limit).limit(limit).lean(),
+      Product.find(filter).select('name description price imageUrl category stock isAvailable store createdAt').populate('store', 'name slug').sort(sort).skip((page - 1) * limit).limit(limit).lean(),
       Product.countDocuments(filter),
     ]);
     return res.status(200).json({ success: true, count: products.length, total, page, pages: Math.ceil(total / limit), products });
@@ -30,9 +30,9 @@ const getProducts = async (req, res) => {
 
 const getProductById = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id).populate('store', 'name slug description logoUrl');
+    const product = await Product.findOne({ _id: req.params.id, isAvailable: { $ne: false } }).populate('store', 'name slug description logoUrl');
     if (!product) return res.status(404).json({ success: false, message: 'Product not found' });
-    const related = await Product.find({ store: product.store._id, _id: { $ne: product._id }, stock: { $gt: 0 } }).limit(4).select('name price imageUrl category store');
+    const related = await Product.find({ store: product.store._id, _id: { $ne: product._id }, stock: { $gt: 0 }, isAvailable: { $ne: false } }).limit(4).select('name price imageUrl category store');
     return res.status(200).json({ success: true, product, related });
   } catch (error) {
     if (error.name === 'CastError') return res.status(400).json({ success: false, message: 'Invalid product ID' });

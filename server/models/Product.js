@@ -24,6 +24,7 @@ const productSchema = new mongoose.Schema(
       default: '',
       trim: true,
     },
+    imagePublicId: { type: String, default: '', trim: true, maxlength: 255 },
     category: {
       type: String,
       required: true,
@@ -33,6 +34,10 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
       min: 0,
+    },
+    isAvailable: {
+      type: Boolean,
+      default: true,
     },
     store: {
       type: mongoose.Schema.Types.ObjectId,

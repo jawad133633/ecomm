@@ -1,5 +1,6 @@
 import '../src/index.css';
 import '../src/App.css';
+import '../src/clinic.css';
 
 export const metadata = {
   title: 'MarketHub — Good things. Good people.',

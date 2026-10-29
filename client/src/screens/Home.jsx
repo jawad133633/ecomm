@@ -110,6 +110,7 @@ export default function Home() {
   const [ordering, setOrdering] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [customerName, setCustomerName] = useState('');
+  const [currentUser, setCurrentUser] = useState(null);
   const logout = () => { localStorage.removeItem('token'); localStorage.removeItem('user'); window.location.assign('/'); };
 
   useEffect(() => {
@@ -122,7 +123,14 @@ export default function Home() {
     };
     syncCart();
     setIsLoggedIn(Boolean(localStorage.getItem('token')));
-    try { setCustomerName(JSON.parse(localStorage.getItem('user') || '{}').name?.trim().split(/\s+/)[0] || ''); } catch { setCustomerName(''); }
+    try {
+      const user = JSON.parse(localStorage.getItem('user') || 'null');
+      setCurrentUser(user);
+      setCustomerName(user?.name?.trim().split(/\s+/)[0] || '');
+    } catch {
+      setCurrentUser(null);
+      setCustomerName('');
+    }
     window.addEventListener('market-cart-updated', syncCart);
     return () => window.removeEventListener('market-cart-updated', syncCart);
   }, []);
@@ -168,35 +176,55 @@ export default function Home() {
       <nav className="main-nav" aria-label="Main navigation"><Link to="/discover">Discover</Link><Link to="/shops">Shops</Link><a href="#our-story">Our story</a></nav>
       <div className="header-actions">
         <label className="search-box"><span aria-hidden="true">⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search the marketplace" aria-label="Search products" /></label>
-        <Link className="header-login" to={isLoggedIn ? '/dashboard' : '/login'}>{isLoggedIn ? 'My account' : 'Log in'}</Link>
+        {isLoggedIn && currentUser?.role === 'admin' ? (
+          <Link className="header-admin-pill" to="/admin">⚙ Admin Panel</Link>
+        ) : (
+          <Link className="header-login" to={isLoggedIn ? '/dashboard' : '/login'}>{isLoggedIn ? 'My account' : 'Log in'}</Link>
+        )}
         {isLoggedIn && <><Link className="header-login" to="/orders">My orders</Link><button className="logout-button" type="button" onClick={logout}>Log out</button></>}
         <Link className="bag-button" to="/cart" aria-label={`Shopping bag, ${cart} items`}>Bag <span>{cart}</span></Link>
       </div>
     </header>
 
     {isLoggedIn && <section className="customer-welcome" aria-label="Your marketplace welcome">
-      <div><span className="eyebrow">YOUR MARKETPLACE, YOUR WAY</span><h1>Welcome back{customerName ? `, ${customerName}` : ''}<span>.</span></h1><p>Your next favourite find is waiting somewhere in the market.</p></div>
-      <div className="customer-welcome-actions"><Link to="/orders">Track your orders <span aria-hidden="true">↗</span></Link><Link to="/discover">Explore the market <span aria-hidden="true">→</span></Link></div>
-      <span className="customer-welcome-flower" aria-hidden="true">✳</span>
+      <div className="customer-welcome-info">
+        <span className="eyebrow">{currentUser?.role === 'admin' ? '🛡️ STORE ADMINISTRATOR' : 'YOUR MARKETPLACE, YOUR WAY'}</span>
+        <h1>Welcome back{customerName ? `, ${customerName}` : ''}<span>.</span></h1>
+        <p>{currentUser?.role === 'admin' ? 'You have full administrative access over store orders, catalogue, sales reports, and settings.' : 'Your next favourite find is waiting somewhere in the market.'}</p>
+      </div>
+      <div className="customer-welcome-actions">
+        {currentUser?.role === 'admin' ? (
+          <>
+            <Link className="welcome-primary-btn" to="/admin">Go to Admin Panel ⚙</Link>
+            <Link className="welcome-secondary-btn" to="/admin/orders">Manage Orders ↗</Link>
+            <Link className="welcome-secondary-btn" to="/discover">Explore Market →</Link>
+          </>
+        ) : (
+          <>
+            <Link className="welcome-primary-btn" to="/orders">Track your orders ↗</Link>
+            <Link className="welcome-secondary-btn" to="/discover">Explore the market →</Link>
+          </>
+        )}
+      </div>
     </section>}
 
     <main>
       <section className="hero-banner">
-        <div className="hero-copy"><span className="eyebrow">A MARKETPLACE WITH A LITTLE MORE MEANING</span><h1>Good things.<br /><em>Good people.</em></h1><p>Thoughtful finds from independent shops, makers, and the people behind them.</p><Link className="button button-dark" to="/discover">Find your next favourite <span>↗</span></Link><div className="hero-footnote"><span className="tiny-stars">✳ ✳ ✳</span> Small shops. Big heart.</div></div>
+        <div className="hero-copy"><span className="eyebrow">A MARKETPLACE WITH A LITTLE MORE MEANING</span><h1>Good things.<br /><em>Good people.</em></h1><p>Thoughtful finds from independent shops, makers, and the people behind them.</p><Link className="button button-dark" to="/discover">Find your next favourite <span>→</span></Link><div className="hero-footnote"><span className="tiny-stars">★ ★ ★</span> Small shops. Big heart.</div></div>
         <div className="hero-art" aria-label="A collection of independent market finds"><div className="art-note">Made with care,<br />found with love.</div><img className="hero-main-image" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=90" alt="Thoughtfully styled clothing and accessories" /><div className="hero-stamp">SHOP<br />SMALL<br /><span>♥</span></div><div className="photo-caption">A slower kind of shopping · Est. 2026</div></div>
       </section>
 
-      <section className="category-strip" aria-label="Shop by category">{categories.slice(1).map((item, index) => <Link key={item} className="category-pill" to={`/category/${encodeURIComponent(item.toLowerCase().replaceAll(' ','-'))}`}><span className={`category-dot dot-${index}`} aria-hidden="true">{['✳', '◒', '⌂', '✿', '↗'][index]}</span>{item}<span className="category-arrow">↗</span></Link>)}</section>
+      <section className="category-strip" aria-label="Shop by category">{categories.slice(1).map((item, index) => <Link key={item} className="category-pill" to={`/category/${encodeURIComponent(item.toLowerCase().replaceAll(' ','-'))}`}><span className={`category-dot dot-${index}`} aria-hidden="true">{['👕', '👜', '🏠', '✨', '🌿'][index]}</span>{item}<span className="category-arrow">→</span></Link>)}</section>
 
       <section className="product-section" id="discover">
         <div className="section-heading"><div><span className="eyebrow">THE MARKET, RIGHT NOW</span><h2>Picked with <em>purpose.</em></h2></div><Link className="text-link" to="/discover">Browse all finds <span>↗</span></Link></div>
         <div className="filters" role="group" aria-label="Filter products by category">{categories.map((item) => <button key={item} className={category === item ? 'filter-chip active' : 'filter-chip'} onClick={() => setCategory(item)}>{item}</button>)}</div>
-        {featuredProducts.length ? <div className="product-grid" id="product-grid">{featuredProducts.map((product, index) => <article className="product-card" key={product._id}><Link className="product-image" to={String(product._id).startsWith('p') ? '/shops' : `/product/${product._id}`}><img src={product.imageUrl || demoProducts[index % demoProducts.length].imageUrl} alt={product.name} loading="lazy" />{product.label && <span className="product-label">{product.label}</span>}<span className="product-heart" aria-hidden="true">♡</span></Link><div className="product-info"><div className="product-meta"><Link to={product.store?.slug ? `/store/${product.store.slug}` : '/shops'}>{product.store?.name || 'Independent shop'}</Link><span>✳ 4.9</span></div><h3>{product.name}</h3><div className="product-bottom"><strong>{formatPrice(product.price)}</strong><button onClick={() => addToBag(product)} aria-label={`Add ${product.name} to bag`}>Add to bag <span aria-hidden="true">+</span></button></div></div></article>)}</div> : <div className="empty-products"><span>✳</span><p>No finds in that corner yet.</p><button onClick={() => { setCategory('Everything'); setSearch(''); }}>See everything</button></div>}
+        {featuredProducts.length ? <div className="product-grid" id="product-grid">{featuredProducts.map((product, index) => <article className="product-card" key={product._id}><Link className="product-image" to={String(product._id).startsWith('p') ? '/shops' : `/product/${product._id}`}><img src={product.imageUrl || demoProducts[index % demoProducts.length].imageUrl} alt={product.name} loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = demoProducts[index % demoProducts.length]?.imageUrl || "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"; }} />{product.label && <span className="product-label">{product.label}</span>}<span className="product-heart" aria-hidden="true">♡</span></Link><div className="product-info"><div className="product-meta"><Link to={product.store?.slug ? `/store/${product.store.slug}` : '/shops'}>{product.store?.name || 'Independent shop'}</Link><span>★ 4.9</span></div><h3>{product.name}</h3><div className="product-bottom"><strong>{formatPrice(product.price)}</strong><button onClick={() => addToBag(product)} aria-label={`Add ${product.name} to bag`}>Add to bag <span aria-hidden="true">+</span></button></div></div></article>)}</div> : <div className="empty-products"><span>✳</span><p>No finds in that corner yet.</p><button onClick={() => { setCategory('Everything'); setSearch(''); }}>See everything</button></div>}
       </section>
 
-      <section className="maker-banner"><div className="maker-photo"><img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1200&q=85" alt="A maker carefully preparing a handmade product" loading="lazy" /></div><div className="maker-copy"><span className="eyebrow">A GOOD PLACE TO BEGIN</span><h2>Made by people.<br /><em>Not algorithms.</em></h2><p>Meet the makers, small businesses, and big ideas turning everyday shopping into something personal.</p><Link className="button button-light" to="/shops">Meet the shops <span>↗</span></Link><span className="maker-aside">YOUR NEXT FAVOURITE THING IS AROUND HERE SOMEWHERE</span></div><span className="banner-sparkle" aria-hidden="true">✳</span></section>
+      <section className="maker-banner"><div className="maker-photo"><img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1200&q=85" alt="A maker carefully preparing a handmade product" loading="lazy" /></div><div className="maker-copy"><span className="eyebrow">A GOOD PLACE TO BEGIN</span><h2>Made by people.<br /><em>Not algorithms.</em></h2><p>Meet the makers, small businesses, and big ideas turning everyday shopping into something personal.</p><Link className="button button-light" to="/shops">Meet the shops <span>→</span></Link><span className="maker-aside">YOUR NEXT FAVOURITE THING IS AROUND HERE SOMEWHERE</span></div><span className="banner-sparkle" aria-hidden="true">✨</span></section>
 
-      <section className="seller-cta" id="our-story"><div className="seller-icon" aria-hidden="true">✳</div><div><span className="eyebrow">YOUR IDEA DESERVES A WINDOW</span><h2>Have something good to share?</h2><p>Open your own little corner of the marketplace. Your store is yours to make.</p></div><Link className="button button-dark" to="/create-store">Open your shop <span>↗</span></Link></section>
+      <section className="seller-cta" id="our-story"><div className="seller-icon" aria-hidden="true">🏪</div><div><span className="eyebrow">YOUR IDEA DESERVES A WINDOW</span><h2>Have something good to share?</h2><p>Open your own little corner of the marketplace. Your store is yours to make.</p></div><Link className="button button-dark" to="/create-store">Open your shop <span>→</span></Link></section>
     </main>
 
     <footer className="site-footer"><Link className="brand" to="/">market<span>hub</span><i>®</i></Link><span>A marketplace made for the makers, the finders, and the good stuff in between.</span><div><Link to="/login">Log in</Link><Link to="/signup">Join the market</Link><Link to="/dashboard">Seller space</Link></div><small>© 2026 MarketHub. Made for good things.</small></footer>

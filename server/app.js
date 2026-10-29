@@ -4,6 +4,8 @@ const authRoutes = require('./routes/authRoutes');
 const storeRoutes = require('./routes/storeRoutes');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+const clinicRoutes = require('./routes/clinicRoutes');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -44,6 +46,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/stores', storeRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/clinic', clinicRoutes);
 
 app.get('/', (req, res) => {
   res.json({ success: true, message: 'MarketHub backend is running!' });

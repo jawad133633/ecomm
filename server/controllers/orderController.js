@@ -99,10 +99,11 @@ const createOrder = async (req, res) => {
     }
     const total = lineItems.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
     const order = await Order.create({
-      buyer: req.user.id, items: lineItems, total,
+      buyer: req.user.id, items: lineItems, total, subtotal: total,
       customerName: customerName.trim(), phone: phone.trim(), address: address.trim(),
       paymentMethod: 'cash_on_delivery',
       paymentStatus: 'unpaid',
+      paymentHistory: [{ status: 'unpaid', amount: total, provider: 'cash_on_delivery', source: 'system', note: 'Order placed; payment is due on delivery.' }],
     });
     return res.status(201).json({ success: true, message: 'Your order is placed. Pay cash on delivery.', order: { id: order._id, total: order.total, status: order.status, paymentStatus: order.paymentStatus } });
   } catch (error) {
