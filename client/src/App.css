@@ -620,7 +620,9 @@
   }
 }
 
-/* Shops Screen */
+/* ==========================================================================
+   Shops Screen Styles & Full Multi-Device Responsiveness
+   ========================================================================== */
 .shops-hero {
   padding-top: 54px;
   padding-bottom: 51px;
@@ -633,6 +635,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .shops-heading h2 {
@@ -642,10 +645,12 @@
   letter-spacing: -0.5px;
 }
 
-.shops-heading > span {
+.shops-heading > span,
+.shops-counter {
   font-size: 13px;
   color: var(--muted);
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .shops-grid {
@@ -658,13 +663,16 @@
 }
 
 .shop-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: #ffffff;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
 }
 
 .shop-card:hover {
@@ -673,30 +681,80 @@
   box-shadow: var(--shadow-xl);
 }
 
+.shop-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #f1f5f9;
+  overflow: hidden;
+}
+
+.shop-card-media img,
 .shop-card > img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
-  background: #f1f5f9;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.shop-card:hover .shop-card-media img,
+.shop-card:hover > img {
+  transform: scale(1.05);
+}
+
+.shop-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  text-transform: uppercase;
 }
 
 .shop-card-copy {
-  padding: 22px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.shop-card-copy .eyebrow {
+  margin: 0;
+  font-size: 10px;
 }
 
 .shop-card-copy h3 {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
   margin: 6px 0 8px;
   color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .shop-card-copy p {
   font-size: 13px;
   line-height: 1.6;
   color: var(--muted);
-  min-height: 40px;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-height: 42px;
 }
 
 .shop-card-link {
@@ -709,6 +767,16 @@
   font-size: 13px;
   font-weight: 700;
   color: var(--primary);
+  gap: 8px;
+}
+
+.shop-card-link b {
+  font-style: normal;
+  transition: transform 0.2s ease;
+}
+
+.shop-card:hover .shop-card-link b {
+  transform: translateX(4px);
 }
 
 .shops-cta {
@@ -733,6 +801,238 @@
   font-size: 14px;
   color: var(--muted);
   margin-bottom: 22px;
+}
+
+/* Responsive Shops Breakpoints */
+@media (max-width: 1100px) {
+  .shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .shops-hero {
+    margin: 20px 20px 0;
+    padding: 36px 28px;
+  }
+
+  .shops-heading {
+    padding: 0 20px;
+    margin: 32px auto 20px;
+  }
+
+  .shops-cta {
+    margin: 48px 20px 0;
+    padding: 36px 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .shops-page {
+    padding-bottom: 60px;
+  }
+
+  .shops-hero {
+    margin: 16px 16px 0;
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .shops-hero h1 {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+
+  .shops-heading {
+    padding: 0 16px;
+    margin: 28px auto 16px;
+  }
+
+  .shops-heading h2 {
+    font-size: 24px;
+  }
+
+  .shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .shop-card {
+    border-radius: 16px;
+  }
+
+  .shop-card-copy {
+    padding: 16px;
+  }
+
+  .shop-card-copy h3 {
+    font-size: 17px;
+  }
+
+  .shop-card-copy p {
+    font-size: 12px;
+  }
+
+  .shops-cta {
+    margin: 40px 16px 0;
+    padding: 32px 18px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .shops-hero {
+    margin: 8px 12px 0;
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .shops-hero h1 {
+    font-size: clamp(24px, 6.5vw, 32px);
+    letter-spacing: -0.6px;
+    margin: 6px 0;
+  }
+
+  .shops-hero > p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 16px;
+  }
+
+  .shops-heading {
+    padding: 0 14px;
+    margin: 20px auto 12px;
+  }
+
+  .shops-heading h2 {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
+  .shops-counter {
+    font-size: 12px;
+  }
+
+  .shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .shop-card {
+    border-radius: 14px;
+  }
+
+  .shop-card-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .shop-card-copy {
+    padding: 12px 10px;
+  }
+
+  .shop-card-copy .eyebrow {
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+
+  .shop-card-copy h3 {
+    font-size: 14px;
+    margin: 2px 0 4px;
+  }
+
+  .shop-card-copy p {
+    font-size: 11px;
+    line-height: 1.4;
+    min-height: 30px;
+  }
+
+  .shop-card-link {
+    font-size: 11px;
+    padding-top: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .shops-cta {
+    margin: 32px 12px 0;
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .shops-cta h2 {
+    font-size: 20px;
+  }
+
+  .shops-cta p {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .shops-cta .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 440px) {
+  .shops-hero {
+    margin: 6px 8px 0;
+    padding: 18px 12px;
+    border-radius: 14px;
+  }
+
+  .shops-hero h1 {
+    font-size: 21px;
+  }
+
+  .shops-heading {
+    padding: 0 10px;
+    margin: 18px auto 10px;
+  }
+
+  .shops-heading h2 {
+    font-size: 18px;
+  }
+
+  .shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  .shop-card-copy {
+    padding: 10px 8px;
+  }
+
+  .shop-card-copy h3 {
+    font-size: 13px;
+  }
+
+  .shop-card-copy p {
+    font-size: 10px;
+    line-height: 1.35;
+    min-height: 28px;
+  }
+
+  .shop-card-link {
+    font-size: 10px;
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  .shops-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .shop-card-media {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* Cart Page */

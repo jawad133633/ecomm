@@ -3496,3 +3496,38 @@ img, video, canvas, svg {
     gap: 10px !important;
   }
 }
+
+/* Shops Page Overrides for Mobile & Tablet */
+@media (max-width: 860px) {
+  .shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    padding: 0 14px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .shops-hero {
+    margin: 8px 10px 0 !important;
+    padding: 22px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .shops-hero h1 {
+    font-size: clamp(22px, 6vw, 30px) !important;
+  }
+
+  .shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    padding: 0 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .shops-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 0 10px !important;
+  }
+}
