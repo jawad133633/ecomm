@@ -41,6 +41,19 @@ app.use((req, res, next) => {
   next();
 });
 
+const connectDB = require('./config/db');
+app.use(async (req, res, next) => {
+  if (req.path === '/api/health' || req.path === '/health') return next();
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('Serverless DB middleware error:', err.message);
+    res.status(503).json({ success: false, message: 'Database connection failed. Please retry.' });
+  }
+});
+
+
 app.use('/api/auth', authRoutes);
 
 app.use('/api/stores', storeRoutes);
