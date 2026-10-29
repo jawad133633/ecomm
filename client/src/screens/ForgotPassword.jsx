@@ -45,10 +45,8 @@ export default function ForgotPassword() {
     try {
       const { data } = await api.post('/auth/forgot-password', { email: email.trim().toLowerCase() });
       setSuccessMsg(data.message || 'Verification code sent to your email.');
-      if (data.devOtp) {
-        setDevOtp(data.devOtp);
-        setOtp(data.devOtp);
-      }
+      setOtp('');
+      setDevOtp('');
       setResendCooldown(60);
       setStep('otp');
     } catch (err) {
@@ -234,17 +232,20 @@ export default function ForgotPassword() {
             {error && <div role="alert" className="form-alert">{error}</div>}
             {successMsg && <div role="status" className="form-success">{successMsg}</div>}
 
-            {/* Verification Code pill */}
-            {devOtp && step === 'otp' && (
-              <div
-                className="dev-otp-banner"
-                style={{ cursor: 'pointer' }}
-                onClick={() => setOtp(devOtp)}
-                title="Click to auto-fill code"
-              >
-                <span className="dev-pill">VERIFICATION CODE DISPATCHED ✉</span>
-                <span className="dev-code">{devOtp}</span>
-                <small>👉 Click code to auto-fill into input</small>
+            {step === 'otp' && (
+              <div className="whatsapp-action-box" style={{ background: '#eff6ff', borderColor: '#bfdbfe', marginBottom: '18px' }}>
+                <p className="whatsapp-action-desc" style={{ color: '#1e40af', marginBottom: '8px' }}>
+                  ✉️ Verification code has been sent directly to <strong>{email}</strong>. Please check your Gmail inbox (or Spam folder).
+                </p>
+                <a
+                  href="https://mail.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-link"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '13px', fontWeight: '700', color: '#2563eb' }}
+                >
+                  Open Gmail Inbox ↗
+                </a>
               </div>
             )}
 
