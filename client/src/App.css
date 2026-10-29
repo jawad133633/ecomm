@@ -4010,3 +4010,56 @@
 .recovery-footer-links .account-switch {
   margin: 0;
 }
+
+/* WhatsApp 1-Click Recovery Action Styles */
+.whatsapp-action-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  padding: 18px 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.whatsapp-action-desc {
+  font-size: 13px;
+  color: #166534;
+  font-weight: 600;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.btn-whatsapp-chat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  background: #25d366;
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-whatsapp-chat:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+}
+
+.btn-whatsapp-chat:active {
+  transform: translateY(0);
+}
+
+.btn-whatsapp-chat svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+  flex-shrink: 0;
+}

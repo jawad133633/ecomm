@@ -147,12 +147,27 @@ async function requestAdminOtp(req, res) {
       }
     }
 
+    const userPhoneDigits = identifier.replace(/\D/g, '');
+    let targetPhoneDigits = target;
+    if (userPhoneDigits.length >= 10) {
+      targetPhoneDigits = userPhoneDigits.startsWith('92')
+        ? userPhoneDigits
+        : userPhoneDigits.startsWith('0')
+        ? '92' + userPhoneDigits.slice(1)
+        : '92' + userPhoneDigits;
+    }
+
+    const waMessage = `*MarketHub Admin Security Verification*\n\nYour 6-digit WhatsApp recovery code is: *${otp}*\n\nValid for ${Math.round(ttlSeconds / 60)} minutes. Do not share this code with anyone.`;
+    const whatsAppUrl = `https://wa.me/${targetPhoneDigits}?text=${encodeURIComponent(waMessage)}`;
+
     return res.json({
       success: true,
       message: genericMessage,
       identifier: user.email,
       targetPhone: maskedTarget,
-      devOtp: process.env.NODE_ENV !== 'production' ? otp : undefined,
+      whatsAppUrl,
+      // Completely hidden from web page so it never leaks on screen
+      devOtp: undefined,
     });
   } catch (error) {
     console.error('Admin OTP request failed:', error.message);
