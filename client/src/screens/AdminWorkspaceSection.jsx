@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
 import api from '../api/axios';
+import AdminObservability from './AdminObservability';
 
 const money = (value) => `Rs. ${Number(value || 0).toLocaleString('en-PK', { maximumFractionDigits: 2 })}`;
 const title = (value) => String(value || '—').replaceAll('_', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -11,7 +12,7 @@ export default function AdminWorkspaceSection({ section, token, user, onLogout }
   const [password, setPassword] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' }); const [saving, setSaving] = useState(false);
   const headers = { Authorization: `Bearer ${token}` };
   const load = useCallback(async () => {
-    if (section === 'settings') { setLoading(false); return; }
+    if (section === 'settings' || section === 'observability') { setLoading(false); return; }
     setLoading(true); setError('');
     try {
       const path = section === 'reports' ? '/admin/reports' : section === 'payments' ? '/admin/payments' : '/admin/customers';
@@ -54,6 +55,8 @@ export default function AdminWorkspaceSection({ section, token, user, onLogout }
       <button className="admin-primary-button" disabled={saving}>{saving ? 'Saving…' : 'Update direct access password'}</button>
     </form><p className="admin-settings-footnote">Need to reset via OTP? <a href="/admin/forgot-password">Recover access with WhatsApp OTP</a>.</p>
   </section>;
+
+  if (section === 'observability') return <AdminObservability token={token} />;
 
   if (loading) return <div className="admin-loading"><span/>Loading {section}…</div>;
   return <>

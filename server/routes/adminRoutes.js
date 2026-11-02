@@ -4,6 +4,7 @@ const protect = require('../middleware/authMiddleware');
 const requireAdmin = require('../middleware/adminMiddleware');
 const admin = require('../controllers/adminController');
 const adminPassword = require('../controllers/adminPasswordController');
+const observability = require('../controllers/observabilityController');
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -21,6 +22,10 @@ router.get('/reports/export.csv', admin.exportSalesCsv);
 router.get('/reports', admin.getSalesReport);
 router.get('/payments', admin.getPayments);
 router.get('/customers', admin.getCustomers);
+router.get('/observability/overview', observability.getOverview);
+router.get('/observability/traces', observability.getTraceList);
+router.get('/observability/logs', observability.getLogList);
+router.post('/observability/logs/clear', observability.clearLogs);
 router.post('/security/change-password', adminPassword.changeAdminPassword);
 router.patch('/orders/:id/status', admin.updateOrderStatus);
 router.get('/products', admin.getProducts);

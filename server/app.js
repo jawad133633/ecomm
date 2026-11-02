@@ -6,6 +6,13 @@ const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const clinicRoutes = require('./routes/clinicRoutes');
+const {
+  register,
+  metricsMiddleware,
+} = require("./middleware/metrics");
+const { traceMiddleware } = require('./middleware/traceMiddleware');
+const observabilityController = require('./controllers/observabilityController');
+
 const mongoose = require('mongoose');
 
 const app = express();
@@ -15,8 +22,12 @@ const app = express();
 if (process.env.TRUST_PROXY) app.set('trust proxy', process.env.TRUST_PROXY);
 app.use(cors());
 app.disable('x-powered-by');
+app.use(traceMiddleware);
 app.use(express.json({ limit: '100kb' }));
 app.use(express.urlencoded({ extended: false }));
+app.use(metricsMiddleware);
+
+app.post('/api/observability/client-event', observabilityController.recordClientEvent);
 
 app.get('/health', (req, res) => {
   const ready = mongoose.connection.readyState === 1;
@@ -62,8 +73,27 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/clinic', clinicRoutes);
 
+
 app.get('/', (req, res) => {
   res.json({ success: true, message: 'MarketHub backend is running!' });
 });
+
+app.get("/metrics", async (req, res) => {
+  try {
+    const metrics = await register.metrics();
+
+    res.set("Content-Type", register.contentType);
+    res.status(200).send(metrics);
+
+  } catch (error) {
+    console.error("PROMETHEUS METRICS ERROR:", error);
+
+    res.status(500).json({
+      message: "Metrics generation failed",
+      error: error.message,
+    });
+  }
+});
+
 
 module.exports = app;

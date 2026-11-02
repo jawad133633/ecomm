@@ -19,6 +19,7 @@ function Icon({ name }) {
     chart: <><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-5 5"/></>,
     payment: <><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></>,
     settings: <><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.9h-2.8l-.3-1.9a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.9h2.8l.3 1.9a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z"/></>,
+    pulse: <><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></>,
     out: <><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></>,
   };
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">{paths[name]}</svg>;
@@ -46,7 +47,7 @@ function SalesChart({ data = [], metricLabel = 'Daily sales revenue', formatValu
 export default function Admin() {
   const pathname = usePathname();
   const navigate = useNavigate();
-  const section = ['products', 'orders', 'reports', 'payments', 'customers', 'settings'].find((item) => pathname.endsWith(`/${item}`)) || 'overview';
+  const section = ['products', 'orders', 'reports', 'payments', 'customers', 'settings', 'observability'].find((item) => pathname.endsWith(`/${item}`)) || 'overview';
   const [token, setToken] = useState(''); const [user, setUser] = useState(null);
   const [overview, setOverview] = useState(null); const [orders, setOrders] = useState([]); const [products, setProducts] = useState([]); const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true); const [saving, setSaving] = useState(false); const [error, setError] = useState(''); const [notice, setNotice] = useState('');
@@ -120,7 +121,7 @@ export default function Admin() {
     <aside className="admin-sidebar">
       <Link className="brand" to="/">market<span>hub</span><i>®</i></Link><div className="admin-sidebar-label">WORKSPACE</div>
     <nav className="admin-nav" aria-label="Admin navigation">
-        {[['overview', 'Overview', 'grid', '/admin'], ['orders', 'Orders', 'bag', '/admin/orders'], ['products', 'Products', 'box', '/admin/products'], ['customers', 'Customers', 'people', '/admin/customers'], ['reports', 'Sales reports', 'chart', '/admin/reports'], ['payments', 'Payments', 'payment', '/admin/payments'], ['settings', 'Security', 'settings', '/admin/settings']].map(([key, label, icon, href]) => <Link key={key} className={section === key ? 'active' : ''} href={href}><Icon name={icon}/>{label}</Link>)}
+        {[['overview', 'Overview', 'grid', '/admin'], ['orders', 'Orders', 'bag', '/admin/orders'], ['products', 'Products', 'box', '/admin/products'], ['customers', 'Customers', 'people', '/admin/customers'], ['reports', 'Sales reports', 'chart', '/admin/reports'], ['payments', 'Payments', 'payment', '/admin/payments'], ['settings', 'Security', 'settings', '/admin/settings'], ['observability', 'Observability', 'pulse', '/admin/observability']].map(([key, label, icon, href]) => <Link key={key} className={section === key ? 'active' : ''} href={href}><Icon name={icon}/>{label}</Link>)}
       </nav>
       <div className="admin-sidebar-bottom"><div className="admin-user-avatar">{user?.name?.slice(0, 1) || 'A'}</div><div className="admin-user"><strong>{user?.name || 'Administrator'}</strong><span>Store administrator</span></div><button type="button" aria-label="Log out" onClick={logout}><Icon name="out"/></button></div>
     </aside>
@@ -128,7 +129,7 @@ export default function Admin() {
       <header className="admin-topbar"><div><span className="admin-breadcrumb">MARKETHUB <span>/</span> {section.toUpperCase()}</span><h1>{section === 'overview' ? 'Store overview' : title(section)}</h1></div><div className="admin-top-actions"><span className="admin-connection">Admin workspace</span><Link href="/">View storefront <span>↗</span></Link></div></header>
       <div className="admin-content">
         {error && <div className="admin-alert error" role="alert">{error}</div>}{notice && <div className="admin-alert success" role="status">{notice}</div>}
-        {['customers', 'reports', 'payments', 'settings'].includes(section) ? token && <AdminWorkspaceSection section={section} token={token} user={user} onLogout={logout}/> : loading ? <div className="admin-loading"><span/>Loading store data…</div> : accessDenied ? <section className="admin-card"><span className="admin-kicker">ADMIN ACCESS REQUIRED</span><h2>This account cannot manage the store.</h2><p>Sign in with an administrator account. A customer or seller login does not grant access to orders, products, or sales data.</p><Link className="admin-secondary-button" href="/admin/login">Go to admin sign in</Link></section> : section === 'overview' ? <>
+        {['customers', 'reports', 'payments', 'settings', 'observability'].includes(section) ? token && <AdminWorkspaceSection section={section} token={token} user={user} onLogout={logout}/> : loading ? <div className="admin-loading"><span/>Loading store data…</div> : accessDenied ? <section className="admin-card"><span className="admin-kicker">ADMIN ACCESS REQUIRED</span><h2>This account cannot manage the store.</h2><p>Sign in with an administrator account. A customer or seller login does not grant access to orders, products, or sales data.</p><Link className="admin-secondary-button" href="/admin/login">Go to admin sign in</Link></section> : section === 'overview' ? <>
           <div className="admin-welcome-row"><div><h2>Your store at a glance{user?.name ? `, ${user.name.split(' ')[0]}` : ''}.</h2><p>Here’s what’s happening across MarketHub today.</p></div><span className="admin-updated">Updated {overview?.updatedAt ? new Date(overview.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '—'}</span></div>
           <section className="admin-revenue-summary" aria-label="Store sales totals">
             <div className="admin-revenue-primary"><span className="admin-kicker">TOTAL STORE SALES</span><h2>Active order value</h2><strong>{money(overview?.metrics?.orderValue)}</strong><p>Combined value of orders excluding cancelled and fully refunded orders.</p></div>

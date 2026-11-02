@@ -1,4 +1,6 @@
-require('dotenv').config();
+require("./instrumentation");
+require("dotenv").config();
+
 
 const serverless = require('serverless-http');
 const app = require('./app');
