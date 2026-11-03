@@ -12,31 +12,73 @@ export default function Catalog() {
   const { category: routeCategory } = useParams();
   const [params, setParams] = useSearchParams();
   const [products, setProducts] = useState(demoProducts);
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(5000);
+  const [hasMore, setHasMore] = useState(true);
   const [sort, setSort] = useState(params.get('sort') || 'newest');
   const [search, setSearch] = useState(params.get('q') || '');
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
 
-  useEffect(() => {
-    api.get('/products')
-      .then(({ data }) => {
-        if (data.products?.length) setProducts(data.products);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
+  const selected = routeCategory ? decodeURIComponent(routeCategory).replaceAll('-', ' ') : 'Everything';
 
   useEffect(() => {
     setSearch(params.get('q') || '');
     setSort(params.get('sort') || 'newest');
   }, [params]);
 
-  const selected = routeCategory ? decodeURIComponent(routeCategory).replaceAll('-', ' ') : 'Everything';
+  // Fetch page 1 whenever category, search, or sort changes
+  useEffect(() => {
+    setLoading(true);
+    setPage(1);
 
-  const visible = useMemo(() => {
-    return products
-      .filter((p) => (selected === 'Everything' || p.category?.toLowerCase() === selected.toLowerCase()) && `${p.name} ${p.category} ${p.store?.name}`.toLowerCase().includes(search.toLowerCase()))
-      .sort((a, b) => (sort === 'price-low' ? a.price - b.price : sort === 'price-high' ? b.price - a.price : 0));
-  }, [products, selected, search, sort]);
+    const query = new URLSearchParams();
+    query.set('page', '1');
+    query.set('limit', '36');
+    if (selected !== 'Everything') query.set('category', selected);
+    if (search.trim()) query.set('search', search.trim());
+    if (sort && sort !== 'newest') query.set('sort', sort);
+
+    api.get(`/products?${query.toString()}`)
+      .then(({ data }) => {
+        if (data.products) {
+          setProducts(data.products);
+          setTotal(data.total || data.products.length);
+          setHasMore(data.page < data.pages);
+        }
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, [selected, search, sort]);
+
+  const loadMore = async () => {
+    if (loadingMore || !hasMore) return;
+    setLoadingMore(true);
+    const nextPage = page + 1;
+
+    const query = new URLSearchParams();
+    query.set('page', String(nextPage));
+    query.set('limit', '36');
+    if (selected !== 'Everything') query.set('category', selected);
+    if (search.trim()) query.set('search', search.trim());
+    if (sort && sort !== 'newest') query.set('sort', sort);
+
+    try {
+      const { data } = await api.get(`/products?${query.toString()}`);
+      if (data.products?.length) {
+        setProducts((prev) => [...prev, ...data.products]);
+        setPage(nextPage);
+        setTotal(data.total || total);
+        setHasMore(data.page < data.pages);
+      } else {
+        setHasMore(false);
+      }
+    } catch (e) {
+      console.error('Failed to load more perfumes:', e);
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   const update = (key, value) => {
     const next = new URLSearchParams(params);
@@ -55,9 +97,9 @@ export default function Catalog() {
         </div>
 
         <section className="catalog-intro">
-          <span className="eyebrow">THE MARKET, RIGHT NOW</span>
-          <h1>Find your <em>good thing.</em></h1>
-          <p>Thoughtful pieces from independent makers, shops, and the people behind them.</p>
+          <span className="eyebrow">HAUTE PARFUMERIE & LUXURY SCENTS</span>
+          <h1>Discover your <em>signature scent.</em></h1>
+          <p>Over 5,000 authentic designer perfumes, rare extraits, and iconic fragrance flacons.</p>
           <label className="catalog-search">
             <span aria-hidden="true">🔍</span>
             <input
@@ -66,7 +108,7 @@ export default function Catalog() {
                 setSearch(e.target.value);
                 update('q', e.target.value);
               }}
-              placeholder="Search products, categories, shops…"
+              placeholder="Search perfumes, brands, notes (e.g. Dior, Oud, Chanel)…"
               aria-label="Search marketplace"
             />
             {search && (
@@ -87,7 +129,7 @@ export default function Catalog() {
 
         <div className="catalog-layout">
           <aside className="catalog-sidebar">
-            <span className="eyebrow">SHOP BY CATEGORY</span>
+            <span className="eyebrow">FRAGRANCE FAMILIES</span>
             <nav className="catalog-categories" aria-label="Shop categories">
               {categories.map((c) => {
                 const isSelected = selected.toLowerCase() === c.toLowerCase();
@@ -104,16 +146,18 @@ export default function Catalog() {
               })}
             </nav>
             <div className="catalog-note">
-              <span>✨</span>
-              <strong>Good things, made by good people.</strong>
-              <p>Every order supports an independent business.</p>
+              <span>💎</span>
+              <strong>100% Authentic Scents.</strong>
+              <p>Direct from luxury boutiques and master perfumers.</p>
             </div>
           </aside>
 
           <section className="catalog-results">
             <div className="catalog-toolbar">
               <span className="catalog-count">
-                {loading ? 'Finding good things…' : `${visible.length} ${visible.length === 1 ? 'find' : 'finds'}${selected !== 'Everything' ? ` in ${selected}` : ''}`}
+                {loading
+                  ? 'Finding luxury perfumes…'
+                  : `Showing ${products.length} of ${total.toLocaleString('en-PK')} perfumes${selected !== 'Everything' ? ` in ${selected}` : ''}`}
               </span>
               <label className="catalog-sort-label">
                 <span>Sort by</span>
@@ -132,7 +176,32 @@ export default function Catalog() {
               </label>
             </div>
 
-            <ProductGrid products={visible} />
+            <ProductGrid products={products} />
+
+            {hasMore && (
+              <div style={{ textAlign: 'center', margin: '3rem 0 2rem' }}>
+                <button
+                  type="button"
+                  className="button button-dark"
+                  onClick={loadMore}
+                  disabled={loadingMore}
+                  style={{
+                    padding: '0.95rem 2.6rem',
+                    fontSize: '1.05rem',
+                    fontWeight: '600',
+                    borderRadius: '9999px',
+                    boxShadow: '0 4px 18px rgba(0,0,0,0.12)',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.65rem',
+                    transition: 'transform 0.2s ease',
+                  }}
+                >
+                  {loadingMore ? 'Loading more perfumes…' : <>Load More Perfumes ✦ ({products.length} of {total.toLocaleString('en-PK')})</>}
+                </button>
+              </div>
+            )}
           </section>
         </div>
       </main>

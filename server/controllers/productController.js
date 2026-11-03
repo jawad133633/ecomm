@@ -16,7 +16,7 @@ const getProducts = async (req, res) => {
     }
     const sort = req.query.sort === 'price-low' ? { price: 1, _id: 1 } : req.query.sort === 'price-high' ? { price: -1, _id: -1 } : { createdAt: -1, _id: -1 };
     const page = Math.max(1, Math.min(100000, Number.parseInt(req.query.page, 10) || 1));
-    const limit = Math.max(1, Math.min(60, Number.parseInt(req.query.limit, 10) || 60));
+    const limit = Math.max(1, Math.min(100, Number.parseInt(req.query.limit, 10) || 48));
     const [products, total] = await Promise.all([
       Product.find(filter).select('name description price imageUrl category stock isAvailable store createdAt').populate('store', 'name slug').sort(sort).skip((page - 1) * limit).limit(limit).lean(),
       Product.countDocuments(filter),

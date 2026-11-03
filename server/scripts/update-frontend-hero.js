@@ -60,3 +60,4 @@ gridSrc = gridSrc.replace(
 );
 fs.writeFileSync(gridPath, gridSrc);
 console.log('✅ ProductGrid.jsx updated');
+

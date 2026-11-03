@@ -674,7 +674,7 @@ export default function Home() {
   const logout = () => { localStorage.removeItem('token'); localStorage.removeItem('user'); window.location.assign('/'); };
 
   useEffect(() => {
-    api.get('/products').then(({ data }) => { if (data.products?.length) setProducts(data.products); }).catch(() => {});
+    api.get('/products?page=1&limit=48').then(({ data }) => { if (data.products?.length) { setProducts(data.products); if (data.total) setTotalCount(data.total); } }).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -700,7 +700,28 @@ export default function Home() {
     const matchesSearch = `${product.name} ${product.category} ${product.store?.name}`.toLowerCase().includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   }), [products, category, search]);
-  const featuredProducts = visibleProducts.slice(0, 8);
+  const featuredProducts = visibleProducts.slice(0, visibleCount);
+
+  const loadMoreHome = async () => {
+    const nextCount = visibleCount + 12;
+    setVisibleCount(nextCount);
+    if (nextCount >= products.length && products.length < totalCount) {
+      setLoadingMore(true);
+      try {
+        const nextPage = homePage + 1;
+        const { data } = await api.get(`/products?page=${nextPage}&limit=48`);
+        if (data.products?.length) {
+          setProducts((prev) => [...prev, ...data.products]);
+          setHomePage(nextPage);
+          if (data.total) setTotalCount(data.total);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoadingMore(false);
+      }
+    }
+  };
 
   const addToBag = (product) => {
     if (String(product._id).startsWith('p')) { setNotice('These are sample items. Create a store and add a real product to try checkout.'); window.setTimeout(() => setNotice(''), 2800); return; }
@@ -779,7 +800,73 @@ export default function Home() {
       <section className="product-section" id="discover">
         <div className="section-heading"><div><span className="eyebrow">THE MARKET, RIGHT NOW</span><h2>Picked with <em>purpose.</em></h2></div><Link className="text-link" to="/discover">Browse all finds <span>↗</span></Link></div>
         <div className="filters" role="group" aria-label="Filter products by category">{categories.map((item) => <button key={item} className={category === item ? 'filter-chip active' : 'filter-chip'} onClick={() => setCategory(item)}>{item}</button>)}</div>
-        {featuredProducts.length ? <div className="product-grid" id="product-grid">{featuredProducts.map((product, index) => <article className="product-card" key={product._id}><Link className="product-image" to={String(product._id).startsWith('p') ? '/shops' : `/product/${product._id}`}><img src={product.imageUrl || demoProducts[index % demoProducts.length].imageUrl} alt={product.name} loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = demoProducts[index % demoProducts.length]?.imageUrl || "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85"; }} />{product.label && <span className="product-label">{product.label}</span>}<span className="product-heart" aria-hidden="true">♡</span></Link><div className="product-info"><div className="product-meta"><Link to={product.store?.slug ? `/store/${product.store.slug}` : '/shops'}>{product.store?.name || 'Independent shop'}</Link><span>★ 4.9</span></div><h3>{product.name}</h3><div className="product-bottom"><strong>{formatPrice(product.price)}</strong><button onClick={() => addToBag(product)} aria-label={`Add ${product.name} to bag`}>Add to bag <span aria-hidden="true">+</span></button></div></div></article>)}</div> : <div className="empty-products"><span>✳</span><p>No finds in that corner yet.</p><button onClick={() => { setCategory('Everything'); setSearch(''); }}>See everything</button></div>}
+        {featuredProducts.length ? (
+          <>
+            <div className="product-grid" id="product-grid">
+              {featuredProducts.map((product, index) => (
+                <article className="product-card" key={product._id}>
+                  <Link className="product-image" to={String(product._id).startsWith('p') ? '/shops' : `/product/${product._id}`}>
+                    <img
+                      src={product.imageUrl || demoProducts[index % demoProducts.length].imageUrl}
+                      alt={product.name}
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = demoProducts[index % demoProducts.length]?.imageUrl || "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85";
+                      }}
+                    />
+                    {product.label && <span className="product-label">{product.label}</span>}
+                    <span className="product-heart" aria-hidden="true">♡</span>
+                  </Link>
+                  <div className="product-info">
+                    <div className="product-meta">
+                      <Link to={product.store?.slug ? `/store/${product.store.slug}` : '/shops'}>
+                        {product.store?.name || 'Luxury Boutique'}
+                      </Link>
+                      <span>★ 4.9</span>
+                    </div>
+                    <h3>{product.name}</h3>
+                    <div className="product-bottom">
+                      <strong>{formatPrice(product.price)}</strong>
+                      <button onClick={() => addToBag(product)} aria-label={`Add ${product.name} to bag`}>
+                        Add to bag <span aria-hidden="true">+</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            {visibleProducts.length > visibleCount && (
+              <div style={{ textAlign: 'center', margin: '2.5rem 0 1rem' }}>
+                <button
+                  type="button"
+                  className="button button-dark"
+                  onClick={loadMoreHome}
+                  disabled={loadingMore}
+                  style={{
+                    padding: '0.95rem 2.6rem',
+                    fontSize: '1.05rem',
+                    fontWeight: '600',
+                    borderRadius: '9999px',
+                    boxShadow: '0 4px 18px rgba(0,0,0,0.12)',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.65rem',
+                  }}
+                >
+                  {loadingMore ? 'Loading more perfumes…' : <>Load More Perfumes ✦ ({Math.min(visibleCount, visibleProducts.length)} of {totalCount.toLocaleString('en-PK')})</>}
+                </button>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="empty-products">
+            <span>✳</span>
+            <p>No finds in that corner yet.</p>
+            <button onClick={() => { setCategory('Everything'); setSearch(''); }}>See everything</button>
+          </div>
+        )}
       </section>
 
       <section className="maker-banner"><div className="maker-photo"><img src="https://images.unsplash.com/photo-1623072042391-46d461773e03?auto=format&fit=crop&w=1200&q=85" alt="Artisanal luxury perfumer blending rare fragrance notes" loading="lazy" /></div><div className="maker-copy"><span className="eyebrow">A GOOD PLACE TO BEGIN</span><h2>Made by people.<br /><em>Not algorithms.</em></h2><p>Meet the makers, small businesses, and big ideas turning everyday shopping into something personal.</p><Link className="button button-light" to="/shops">Meet the shops <span>→</span></Link><span className="maker-aside">YOUR NEXT FAVOURITE THING IS AROUND HERE SOMEWHERE</span></div><span className="banner-sparkle" aria-hidden="true">✨</span></section>
