@@ -126,3 +126,4 @@ src = src.replace(target3, repl3);
 
 fs.writeFileSync(homePath, src);
 console.log('✅ Home.jsx updated with Load More functionality!');
+
