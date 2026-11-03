@@ -7,6 +7,7 @@ const api = axios.create({
   },
 });
 
+
 // Trace & Latency Interceptors for Full Client-Server Observability Correlation
 api.interceptors.request.use((config) => {
   const clientTraceId = `clnt_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 7)}`;

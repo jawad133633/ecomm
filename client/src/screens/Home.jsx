@@ -660,6 +660,10 @@ const formatPrice = (value) => `Rs. ${Number(value || 0).toLocaleString('en-PK')
 
 export default function Home() {
   const [products, setProducts] = useState(demoProducts);
+  const [visibleCount, setVisibleCount] = useState(12);
+  const [totalCount, setTotalCount] = useState(5000);
+  const [homePage, setHomePage] = useState(1);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [category, setCategory] = useState('Everything');
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState(0);
