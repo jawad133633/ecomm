@@ -47,3 +47,4 @@ catSrc = catSrc.replace(/const categories = \[[^\]]*\];/, 'const categories = ' 
 fs.writeFileSync(catPath, catSrc);
 
 console.log('✅ Successfully updated Home.jsx and Catalog.jsx with', demoProducts.length, 'perfumes!');
+

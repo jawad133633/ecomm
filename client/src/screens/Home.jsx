@@ -13,7 +13,7 @@ export const demoProducts = [
       "name": "Dior Official",
       "slug": "dior"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1572533177115-5bea803c0f49?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "An iconic raw and noble composition. Radiant top notes burst with the juicy freshness of Reggio di Calabria Bergamot, enveloped in warm smoky accents of Papua New Guinean vanilla absolute."
   },
@@ -23,11 +23,11 @@ export const demoProducts = [
     "category": "Woody & Aromatic",
     "price": 5600,
     "store": {
-      "name": "Chanel Official",
-      "slug": "chanel"
+      "name": "Bleu Official",
+      "slug": "bleu"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
-    "label": "SIGNATURE",
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An intensely aromatic, woody fragrance for the man who defies convention. A timeless scent housed in an enigmatic blue bottle with cedar and sandalwood accords."
   },
   {
@@ -36,11 +36,11 @@ export const demoProducts = [
     "category": "Luxury Oud",
     "price": 6800,
     "store": {
-      "name": "Tom Ford Official",
-      "slug": "tom-ford"
+      "name": "Tom Official",
+      "slug": "tom"
     },
     "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
-    "label": "LUXURY",
+    "label": "EXCLUSIVE",
     "description": "Rare exotic rosewood and cardamom give way to a smoky blend of rare oud wood, sandalwood, and vetiver. Tonka bean and amber add warmth and sensuality."
   },
   {
@@ -53,7 +53,7 @@ export const demoProducts = [
       "slug": "creed"
     },
     "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
-    "label": "TOP RATED",
+    "label": "EXCLUSIVE",
     "description": "A sensual, audacious, and contemporary scent combining opening notes of blackcurrant and Italian bergamot with a smoky birch, patchouli, and Moroccan jasmine base."
   },
   {
@@ -62,10 +62,10 @@ export const demoProducts = [
     "category": "Amber Floral",
     "price": 7500,
     "store": {
-      "name": "Maison Francis Kurkdjian Official",
-      "slug": "maison-francis-kurkdjian"
+      "name": "Baccarat Official",
+      "slug": "baccarat"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
     "label": "EXCLUSIVE",
     "description": "Luminous and sophisticated, with breezy jasmine petals and radiant saffron that carry mineral facets of ambergris and woody tones of freshly cut cedar."
   },
@@ -75,10 +75,10 @@ export const demoProducts = [
     "category": "Floral & Sweet",
     "price": 4950,
     "store": {
-      "name": "Yves Saint Laurent Official",
-      "slug": "yves-saint-laurent"
+      "name": "YSL Official",
+      "slug": "ysl"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "The perfume of a strong, bold woman living her roaring freedom. French lavender essence combines with the sensuality of Moroccan orange blossom and daring musk."
   },
@@ -88,11 +88,11 @@ export const demoProducts = [
     "category": "Aquatic & Fresh",
     "price": 4500,
     "store": {
-      "name": "Giorgio Armani Official",
-      "slug": "giorgio-armani"
+      "name": "Giorgio Official",
+      "slug": "giorgio"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
-    "label": "SUMMER FAVORITE",
+    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A captivating dive into the profoundness of the ocean. Marine notes awaken the senses alongside green mandarin, rosemary, lavender, and woody patchouli."
   },
   {
@@ -104,8 +104,8 @@ export const demoProducts = [
       "name": "Versace Official",
       "slug": "versace"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
-    "label": "POPULAR",
+    "imageUrl": "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A fragrance for a passionate, confident man. Olfactory notes of Italian lemon, pepperwood, rosemary, cedarwood, and vetiver create an unforgettable trail."
   },
   {
@@ -114,11 +114,11 @@ export const demoProducts = [
     "category": "Dark & Sensual",
     "price": 6200,
     "store": {
-      "name": "Tom Ford Official",
-      "slug": "tom-ford"
+      "name": "Tom Official",
+      "slug": "tom"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
-    "label": "ICONIC",
+    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "A luxurious and sensual fragrance of rich dark accords and an alluring potion of black orchids, spice, ylang-ylang, and golden amber."
   },
   {
@@ -127,11 +127,11 @@ export const demoProducts = [
     "category": "Warm & Spicy",
     "price": 5400,
     "store": {
-      "name": "Maison Margiela Official",
-      "slug": "maison-margiela"
+      "name": "Maison Official",
+      "slug": "maison"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
-    "label": "NICHE PICK",
+    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Heady cocktails and rich cigar smoke in a cozy Brooklyn jazz club. Notes of pink pepper, rum absolute, tobacco leaf, and bourbon vanilla."
   },
   {
@@ -143,7 +143,7 @@ export const demoProducts = [
       "name": "Chanel Official",
       "slug": "chanel"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "The essence of a bold, free woman. An amber woody fragrance with an extreme character centered around an overdose of patchouli warmed by amber, vanilla, and tonka bean."
   },
@@ -156,8 +156,8 @@ export const demoProducts = [
       "name": "Dior Official",
       "slug": "dior"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
-    "label": "FEMININE",
+    "imageUrl": "https://images.unsplash.com/photo-1572533177115-5bea803c0f49?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An ode to women and their audacity. Grandiflorum jasmine and Centifolia rose from Grasse mingle with exotic Tahitian vanilla and creamy tonka bean."
   },
   {
@@ -169,8 +169,8 @@ export const demoProducts = [
       "name": "Gucci Official",
       "slug": "gucci"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=900&q=85",
-    "label": "SPRING CLASSIC",
+    "imageUrl": "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An intense vibrant bouquet featuring precious velvety orris root and Damascena rose alongside jasmine bud extract and tuberose."
   },
   {
@@ -179,11 +179,11 @@ export const demoProducts = [
     "category": "Woody & Fresh",
     "price": 4700,
     "store": {
-      "name": "Yves Saint Laurent Official",
-      "slug": "yves-saint-laurent"
+      "name": "YSL Official",
+      "slug": "ysl"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
-    "label": "TRENDING",
+    "imageUrl": "https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Deeply fresh and intensely powerful. Sage and juniper from Provence are amplified by an elegant cedarwood base and rich Indonesian patchouli."
   },
   {
@@ -192,11 +192,11 @@ export const demoProducts = [
     "category": "Aquatic & Fresh",
     "price": 3600,
     "store": {
-      "name": "Dolce & Gabbana Official",
-      "slug": "dolce-gabbana"
+      "name": "Dolce Official",
+      "slug": "dolce"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85",
-    "label": "CRISP & FRESH",
+    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Sun-drenched Mediterranean escape. Crisp Granny Smith apple and zesty Calabrian lemon meet marigold and luminous amber woods."
   },
   {
@@ -205,11 +205,11 @@ export const demoProducts = [
     "category": "Aquatic & Fresh",
     "price": 3900,
     "store": {
-      "name": "Jo Malone London Official",
-      "slug": "jo-malone-london"
+      "name": "Jo Official",
+      "slug": "jo"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1527632911563-ee5b6d53465b?auto=format&fit=crop&w=900&q=85",
-    "label": "CLEAN SCENT",
+    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Escape the everyday along the windswept shore. Waves breaking white, air fresh with sea salt and spray, alive with the mineral scent of the rugged cliffs."
   },
   {
@@ -221,8 +221,8 @@ export const demoProducts = [
       "name": "Byredo Official",
       "slug": "byredo"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
-    "label": "NICHE LUXURY",
+    "imageUrl": "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "An ode to the beauty of Romany culture, free-spirited and connected to the earth. Bergamot, juniper berries, incense, pine needles, and amber."
   },
   {
@@ -234,8 +234,8 @@ export const demoProducts = [
       "name": "Prada Official",
       "slug": "prada"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
-    "label": "JUST IN",
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An augmentation of floral power with an infusion of jasmine superessence and warm Ambrofix, grounded by a bold moss accord."
   },
   {
@@ -244,10 +244,10 @@ export const demoProducts = [
     "category": "Warm & Spicy",
     "price": 3950,
     "store": {
-      "name": "Paco Rabanne Official",
-      "slug": "paco-rabanne"
+      "name": "Paco Official",
+      "slug": "paco"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "Peak intensity in a solid gold bar. Rich Turkish damascena rose, osmanthus, wild tonka beans, and precious davana liqueur."
   },
@@ -257,11 +257,11 @@ export const demoProducts = [
     "category": "Floral & Sweet",
     "price": 4300,
     "store": {
-      "name": "Carolina Herrera Official",
-      "slug": "carolina-herrera"
+      "name": "Carolina Official",
+      "slug": "carolina"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
-    "label": "FEMME FATALE",
+    "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "It’s so good to be bad. The iconic stiletto bottle filled with almond, coffee, tuberose, tonka bean, and cacao."
   },
   {
@@ -273,8 +273,8 @@ export const demoProducts = [
       "name": "Valentino Official",
       "slug": "valentino"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=900&q=85",
-    "label": "HAUTE COUTURE",
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An magnetic ambery floral pushing vanilla bourbon and luminous jasmine into modern haute couture extravagance."
   },
   {
@@ -284,10 +284,10 @@ export const demoProducts = [
     "price": 4400,
     "store": {
       "name": "Lancôme Official",
-      "slug": "lanc-me"
+      "slug": "lancôme"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=900&q=85",
-    "label": "GIFT FAVORITE",
+    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Life is beautiful. A concentrated tribute to the iconic Iris Pallida flower, spun with gourmand spun sugar and warm patchouli."
   },
   {
@@ -296,11 +296,11 @@ export const demoProducts = [
     "category": "Floral & Sweet",
     "price": 4600,
     "store": {
-      "name": "Viktor & Rolf Official",
-      "slug": "viktor-rolf"
+      "name": "Viktor Official",
+      "slug": "viktor"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
-    "label": "SEDUCTIVE",
+    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A sensual, magnetic floral explosion inspired by the theatrical world of burlesque with ruby orchid and red vanilla bean."
   },
   {
@@ -309,11 +309,11 @@ export const demoProducts = [
     "category": "Gourmand & Warm",
     "price": 7400,
     "store": {
-      "name": "Kilian Paris Official",
-      "slug": "kilian-paris"
+      "name": "Kilian Official",
+      "slug": "kilian"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
-    "label": "CONNOISSEUR",
+    "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "Heritage cognac essence distilled from actual liquor, infused with cinnamon bark, oak absolute, tonka bean, and praline."
   },
   {
@@ -323,10 +323,10 @@ export const demoProducts = [
     "price": 4900,
     "store": {
       "name": "Hermès Official",
-      "slug": "herm-s"
+      "slug": "hermès"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
-    "label": "GENTLEMAN",
+    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Narrating the relationship between man and earth, an alliance of citrus and flint with cedar, benzoin, and shiso."
   },
   {
@@ -335,11 +335,11 @@ export const demoProducts = [
     "category": "Floral & Fruity",
     "price": 4500,
     "store": {
-      "name": "Giorgio Armani Official",
-      "slug": "giorgio-armani"
+      "name": "Armani Official",
+      "slug": "armani"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
-    "label": "ROMANTIC",
+    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A sparkling and modern feminine rose bouquet electrified with juicy blackcurrant and Centifolia rose from Grasse."
   },
   {
@@ -348,11 +348,11 @@ export const demoProducts = [
     "category": "Warm & Spicy",
     "price": 4200,
     "store": {
-      "name": "Jean Paul Gaultier Official",
-      "slug": "jean-paul-gaultier"
+      "name": "Jean Official",
+      "slug": "jean"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=900&q=85",
-    "label": "MAGNETIC",
+    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A burning glow of lavender, mint, honey-sweet benzoin, and rich tonka bean on a sailor’s gilded torso."
   },
   {
@@ -364,8 +364,8 @@ export const demoProducts = [
       "name": "Burberry Official",
       "slug": "burberry"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
-    "label": "NEW CLASSIC",
+    "imageUrl": "https://images.unsplash.com/photo-1623072042391-46d461773e03?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A unique aromatic gourmand led by a powerful trio of distinct vanillas enriched with luminous lavender."
   },
   {
@@ -374,11 +374,11 @@ export const demoProducts = [
     "category": "Ultra Luxury Citrus",
     "price": 7600,
     "store": {
-      "name": "Roja Parfums Official",
-      "slug": "roja-parfums"
+      "name": "Roja Official",
+      "slug": "roja"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=900&q=85",
-    "label": "ELITE",
+    "imageUrl": "https://images.unsplash.com/photo-1572533177115-5bea803c0f49?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "An ultra-rare elixir of pure elegance. Zesty grapefruit and lime meet pink pepper, vetiver, and rich ambergris."
   },
   {
@@ -390,8 +390,8 @@ export const demoProducts = [
       "name": "Amouage Official",
       "slug": "amouage"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
-    "label": "ROYAL OUD",
+    "imageUrl": "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "Frankincense and myrrh in a harmonious storm of oregano, pimento berry, leather, oud, and sandalwood."
   },
   {
@@ -400,11 +400,11 @@ export const demoProducts = [
     "category": "Warm & Spicy",
     "price": 7200,
     "store": {
-      "name": "Parfums de Marly Official",
-      "slug": "parfums-de-marly"
+      "name": "Parfums Official",
+      "slug": "parfums"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85",
-    "label": "NOBILITY",
+    "imageUrl": "https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "The grandeur of the Versailles court. Bergamot, apple, lavender, geranium, violet, and caramelized vanilla."
   },
   {
@@ -416,8 +416,8 @@ export const demoProducts = [
       "name": "Xerjoff Official",
       "slug": "xerjoff"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1527632911563-ee5b6d53465b?auto=format&fit=crop&w=900&q=85",
-    "label": "MASTERPIECE",
+    "imageUrl": "https://images.unsplash.com/photo-1582211594533-268f4f1edcb9?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "A celebration of Mediterranean Sicily. Honeyed tobacco leaf, vibrant citrus, cinnamon, cashmere, and rich vanilla."
   },
   {
@@ -426,11 +426,11 @@ export const demoProducts = [
     "category": "Woody & Smoky",
     "price": 6900,
     "store": {
-      "name": "Le Labo Official",
-      "slug": "le-labo"
+      "name": "Le Official",
+      "slug": "le"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
-    "label": "CULT FAVORITE",
+    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "An intoxicating spirit of the American West. Australian sandalwood, cedarwood, cardamom, iris, and leather."
   },
   {
@@ -442,8 +442,8 @@ export const demoProducts = [
       "name": "Diptyque Official",
       "slug": "diptyque"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
-    "label": "PARISIAN CHIC",
+    "imageUrl": "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An ode to the whole fig tree: green freshness of leaves, milky flavor of ripe figs, and density of white cedar wood."
   },
   {
@@ -452,11 +452,11 @@ export const demoProducts = [
     "category": "Fruity & Gourmand",
     "price": 7300,
     "store": {
-      "name": "Tom Ford Official",
-      "slug": "tom-ford"
+      "name": "Tom Official",
+      "slug": "tom"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
-    "label": "INTOXICATING",
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
     "description": "A full-bodied journey into the once-forbidden. Black cherry infused with bitter almond, Turkish rose, and roasted tonka."
   },
   {
@@ -468,8 +468,8 @@ export const demoProducts = [
       "name": "Chanel Official",
       "slug": "chanel"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
-    "label": "ATHLETIC LUXURY",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "An intense rush of adrenaline. Sparkling Sicilian mandarin pairs with spicy Moroccan cypress and sensual white musk."
   },
   {
@@ -481,8 +481,8 @@ export const demoProducts = [
       "name": "Dior Official",
       "slug": "dior"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=900&q=85",
-    "label": "EVENING SCENT",
+    "imageUrl": "https://images.unsplash.com/photo-1572533177115-5bea803c0f49?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "The pinnacle of masculine sophistication. Tuscan iris enhanced by ambrette seed, Virginia cedar, and vetiver."
   },
   {
@@ -491,11 +491,11 @@ export const demoProducts = [
     "category": "Aquatic & Fresh",
     "price": 4300,
     "store": {
-      "name": "Acqua di Parma Official",
-      "slug": "acqua-di-parma"
+      "name": "Acqua Official",
+      "slug": "acqua"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=900&q=85",
-    "label": "ITALIAN HERITAGE",
+    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Italian sunshine bottled. Classic Golden Fruits citrus balanced by rosemary, delicate floral heart, and woody vetiver."
   },
   {
@@ -508,7 +508,7 @@ export const demoProducts = [
       "slug": "guerlain"
     },
     "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
-    "label": "VINTAGE ICON",
+    "label": "BESTSELLER",
     "description": "The legendary temple of love. Radiant bergamot, powdery iris, and an intoxicating overdose of pure Guerlinade vanilla."
   },
   {
@@ -521,7 +521,7 @@ export const demoProducts = [
       "slug": "montblanc"
     },
     "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
-    "label": "GREAT VALUE",
+    "label": "BESTSELLER",
     "description": "A tribute to the majestic mountains. Crispy violet leaves, herbaceous clary sage, and intense Alaskan cedarwood."
   },
   {
@@ -530,11 +530,11 @@ export const demoProducts = [
     "category": "Fruity & Smoky",
     "price": 2450,
     "store": {
-      "name": "Armaf Official",
-      "slug": "armaf"
+      "name": "Club Official",
+      "slug": "club"
     },
     "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
-    "label": "BEAST MODE",
+    "label": "BESTSELLER",
     "description": "Legendary powerhouse fragrance. Fresh lemon, blackcurrant, pineapple, birch, jasmine, and rich ambergris base."
   },
   {
@@ -547,7 +547,7 @@ export const demoProducts = [
       "slug": "lattafa"
     },
     "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
-    "label": "VIRAL HIT",
+    "label": "BESTSELLER",
     "description": "Arabian hospitality in a crystal flask. Spiced coffee, dates, praline, cinnamon, tonka bean, and bourbon vanilla."
   },
   {
@@ -559,8 +559,8 @@ export const demoProducts = [
       "name": "Rasasi Official",
       "slug": "rasasi"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=900&q=85",
-    "label": "HOT SELLER",
+    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Adventurous aquatic blend. Italian citrus, crisp green apple, plum, cardamom, marine accord, and driftwood."
   },
   {
@@ -572,8 +572,8 @@ export const demoProducts = [
       "name": "Afnan Official",
       "slug": "afnan"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
-    "label": "NIGHTOUT PICK",
+    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "The ultimate party fragrance. Sweet apple, wild cinnamon, wild lavender, orange blossom, amber, and patchouli."
   },
   {
@@ -585,8 +585,8 @@ export const demoProducts = [
       "name": "Mancera Official",
       "slug": "mancera"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=900&q=85",
-    "label": "NICHE FAVORITE",
+    "imageUrl": "https://images.unsplash.com/photo-1623072042391-46d461773e03?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Vibrant Sicilian citrus burst with blackcurrant, spices, leather, patchouli, Cambodian oud, and white musk."
   },
   {
@@ -598,8 +598,8 @@ export const demoProducts = [
       "name": "Montale Official",
       "slug": "montale"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
-    "label": "DELICIOUS",
+    "imageUrl": "https://images.unsplash.com/photo-1572533177115-5bea803c0f49?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Decadent mouth-watering dark chocolate truffle, rich cocoa butter, roasted tonka bean, and orange zest."
   },
   {
@@ -608,11 +608,11 @@ export const demoProducts = [
     "category": "Fresh & Woody",
     "price": 2200,
     "store": {
-      "name": "Calvin Klein Official",
-      "slug": "calvin-klein"
+      "name": "Calvin Official",
+      "slug": "calvin"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85",
-    "label": "DAILY ESSENTIAL",
+    "imageUrl": "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "A seasonal golden tribute. Juicy fig, neroli, luminous jasmine, sage, and radiant vetiver woods."
   },
   {
@@ -624,8 +624,8 @@ export const demoProducts = [
       "name": "Davidoff Official",
       "slug": "davidoff"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1527632911563-ee5b6d53465b?auto=format&fit=crop&w=900&q=85",
-    "label": "AFFORDABLE",
+    "imageUrl": "https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "The timeless oceanic icon reinvented with upcycled rosemary, green galbanum, and sustainable Haitian vetiver."
   },
   {
@@ -634,12 +634,25 @@ export const demoProducts = [
     "category": "Woody & Spicy",
     "price": 3700,
     "store": {
-      "name": "Hugo Boss Official",
-      "slug": "hugo-boss"
+      "name": "Hugo Official",
+      "slug": "hugo"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
-    "label": "MODERN MAN",
+    "imageUrl": "https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
     "description": "Intense and sophisticated. Frankincense and cardamom warm the rich patchouli and cedarwood heart."
+  },
+  {
+    "_id": "perfume-50",
+    "name": "Tom Ford Oud Wood",
+    "category": "Luxury Oud",
+    "price": 6800,
+    "store": {
+      "name": "Tom Official",
+      "slug": "tom"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
+    "description": ""
   }
 ];
 const categories = ["Everything","Woody & Fresh","Luxury Oud","Floral & Sweet","Warm & Spicy","Aquatic & Fresh","Amber Floral"];
@@ -758,18 +771,18 @@ export default function Home() {
     <main>
       <section className="hero-banner">
         <div className="hero-copy"><span className="eyebrow">A MARKETPLACE WITH A LITTLE MORE MEANING</span><h1>Good things.<br /><em>Good people.</em></h1><p>Thoughtful finds from independent shops, makers, and the people behind them.</p><Link className="button button-dark" to="/discover">Find your next favourite <span>→</span></Link><div className="hero-footnote"><span className="tiny-stars">★ ★ ★</span> Small shops. Big heart.</div></div>
-        <div className="hero-art" aria-label="A collection of independent market finds"><div className="art-note">Made with care,<br />found with love.</div><img className="hero-main-image" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=90" alt="Thoughtfully styled clothing and accessories" /><div className="hero-stamp">SHOP<br />SMALL<br /><span>♥</span></div><div className="photo-caption">A slower kind of shopping · Est. 2026</div></div>
+        <div className="hero-art" aria-label="A collection of independent market finds"><div className="art-note">Crafted with passion,<br />scented with luxury.</div><img className="hero-main-image" src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=1200&q=90" alt="Luxury designer perfume collection and flacons" /><div className="hero-stamp">SHOP<br />SMALL<br /><span>♥</span></div><div className="photo-caption">Haute Parfumerie & Rare Scents · Est. 2026</div></div>
       </section>
 
-      <section className="category-strip" aria-label="Shop by category">{categories.slice(1).map((item, index) => <Link key={item} className="category-pill" to={`/category/${encodeURIComponent(item.toLowerCase().replaceAll(' ','-'))}`}><span className={`category-dot dot-${index}`} aria-hidden="true">{['👕', '👜', '🏠', '✨', '🌿'][index]}</span>{item}<span className="category-arrow">→</span></Link>)}</section>
+      <section className="category-strip" aria-label="Shop by category">{categories.slice(1).map((item, index) => <Link key={item} className="category-pill" to={`/category/${encodeURIComponent(item.toLowerCase().replaceAll(' ','-'))}`}><span className={`category-dot dot-${index}`} aria-hidden="true">{['🌲', '✨', '🌸', '🔥', '🌊', '💎'][index]}</span>{item}<span className="category-arrow">→</span></Link>)}</section>
 
       <section className="product-section" id="discover">
         <div className="section-heading"><div><span className="eyebrow">THE MARKET, RIGHT NOW</span><h2>Picked with <em>purpose.</em></h2></div><Link className="text-link" to="/discover">Browse all finds <span>↗</span></Link></div>
         <div className="filters" role="group" aria-label="Filter products by category">{categories.map((item) => <button key={item} className={category === item ? 'filter-chip active' : 'filter-chip'} onClick={() => setCategory(item)}>{item}</button>)}</div>
-        {featuredProducts.length ? <div className="product-grid" id="product-grid">{featuredProducts.map((product, index) => <article className="product-card" key={product._id}><Link className="product-image" to={String(product._id).startsWith('p') ? '/shops' : `/product/${product._id}`}><img src={product.imageUrl || demoProducts[index % demoProducts.length].imageUrl} alt={product.name} loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = demoProducts[index % demoProducts.length]?.imageUrl || "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"; }} />{product.label && <span className="product-label">{product.label}</span>}<span className="product-heart" aria-hidden="true">♡</span></Link><div className="product-info"><div className="product-meta"><Link to={product.store?.slug ? `/store/${product.store.slug}` : '/shops'}>{product.store?.name || 'Independent shop'}</Link><span>★ 4.9</span></div><h3>{product.name}</h3><div className="product-bottom"><strong>{formatPrice(product.price)}</strong><button onClick={() => addToBag(product)} aria-label={`Add ${product.name} to bag`}>Add to bag <span aria-hidden="true">+</span></button></div></div></article>)}</div> : <div className="empty-products"><span>✳</span><p>No finds in that corner yet.</p><button onClick={() => { setCategory('Everything'); setSearch(''); }}>See everything</button></div>}
+        {featuredProducts.length ? <div className="product-grid" id="product-grid">{featuredProducts.map((product, index) => <article className="product-card" key={product._id}><Link className="product-image" to={String(product._id).startsWith('p') ? '/shops' : `/product/${product._id}`}><img src={product.imageUrl || demoProducts[index % demoProducts.length].imageUrl} alt={product.name} loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = demoProducts[index % demoProducts.length]?.imageUrl || "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85"; }} />{product.label && <span className="product-label">{product.label}</span>}<span className="product-heart" aria-hidden="true">♡</span></Link><div className="product-info"><div className="product-meta"><Link to={product.store?.slug ? `/store/${product.store.slug}` : '/shops'}>{product.store?.name || 'Independent shop'}</Link><span>★ 4.9</span></div><h3>{product.name}</h3><div className="product-bottom"><strong>{formatPrice(product.price)}</strong><button onClick={() => addToBag(product)} aria-label={`Add ${product.name} to bag`}>Add to bag <span aria-hidden="true">+</span></button></div></div></article>)}</div> : <div className="empty-products"><span>✳</span><p>No finds in that corner yet.</p><button onClick={() => { setCategory('Everything'); setSearch(''); }}>See everything</button></div>}
       </section>
 
-      <section className="maker-banner"><div className="maker-photo"><img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1200&q=85" alt="A maker carefully preparing a handmade product" loading="lazy" /></div><div className="maker-copy"><span className="eyebrow">A GOOD PLACE TO BEGIN</span><h2>Made by people.<br /><em>Not algorithms.</em></h2><p>Meet the makers, small businesses, and big ideas turning everyday shopping into something personal.</p><Link className="button button-light" to="/shops">Meet the shops <span>→</span></Link><span className="maker-aside">YOUR NEXT FAVOURITE THING IS AROUND HERE SOMEWHERE</span></div><span className="banner-sparkle" aria-hidden="true">✨</span></section>
+      <section className="maker-banner"><div className="maker-photo"><img src="https://images.unsplash.com/photo-1623072042391-46d461773e03?auto=format&fit=crop&w=1200&q=85" alt="Artisanal luxury perfumer blending rare fragrance notes" loading="lazy" /></div><div className="maker-copy"><span className="eyebrow">A GOOD PLACE TO BEGIN</span><h2>Made by people.<br /><em>Not algorithms.</em></h2><p>Meet the makers, small businesses, and big ideas turning everyday shopping into something personal.</p><Link className="button button-light" to="/shops">Meet the shops <span>→</span></Link><span className="maker-aside">YOUR NEXT FAVOURITE THING IS AROUND HERE SOMEWHERE</span></div><span className="banner-sparkle" aria-hidden="true">✨</span></section>
 
       <section className="seller-cta" id="our-story"><div className="seller-icon" aria-hidden="true">🏪</div><div><span className="eyebrow">YOUR IDEA DESERVES A WINDOW</span><h2>Have something good to share?</h2><p>Open your own little corner of the marketplace. Your store is yours to make.</p></div><Link className="button button-dark" to="/create-store">Open your shop <span>→</span></Link></section>
     </main>
