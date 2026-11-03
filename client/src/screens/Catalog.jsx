@@ -6,7 +6,7 @@ import { demoProducts } from './Home';
 import MarketHeader from '../components/MarketHeader';
 import ProductGrid from '../components/ProductGrid';
 
-const categories = ['Everything', 'Clothing', 'Accessories', 'Home & living', 'Beauty', 'Lifestyle'];
+const categories = ["Everything","Woody & Fresh","Luxury Oud","Floral & Sweet","Warm & Spicy","Aquatic & Fresh","Amber Floral"];
 
 export default function Catalog() {
   const { category: routeCategory } = useParams();

@@ -4,98 +4,645 @@ import { Link } from '../lib/navigation';
 import api from '../api/axios';
 
 export const demoProducts = [
-  { _id: 'p1', name: 'Everyday Canvas Tote', category: 'Accessories', price: 2450, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85', label: 'BESTSELLER' },
-  { _id: 'p2', name: 'Ceramic Morning Mug', category: 'Home & living', price: 1850, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85', label: 'HANDMADE' },
-  { _id: 'p3', name: 'Essential Knit Set', category: 'Clothing', price: 6200, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=900&q=85', label: 'JUST IN' },
-  { _id: 'p4', name: 'Sunday Skin Ritual', category: 'Beauty', price: 3200, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85', label: 'COMMUNITY PICK' },
-  { _id: 'p5', name: 'Sculpted Brass Hoops', category: 'Accessories', price: 2900, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p6', name: 'Soft Form Cushion', category: 'Home & living', price: 4400, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p7', name: 'Daily Carry Bottle', category: 'Lifestyle', price: 2100, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p8', name: 'Weekend Leather Wallet', category: 'Accessories', price: 5100, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p9', name: 'Linen Weekend Shirt', category: 'Clothing', price: 4800, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p10', name: 'Relaxed Cotton Tee', category: 'Clothing', price: 1950, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p11', name: 'Everyday Denim Jacket', category: 'Clothing', price: 7200, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p12', name: 'Ribbed Lounge Set', category: 'Clothing', price: 5600, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p13', name: 'Soft Knit Cardigan', category: 'Clothing', price: 6800, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p14', name: 'Everyday Crossbody', category: 'Accessories', price: 3950, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p15', name: 'Woven Market Basket', category: 'Accessories', price: 3300, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p16', name: 'Everyday Sunglasses', category: 'Accessories', price: 2700, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p17', name: 'Minimal Silver Necklace', category: 'Accessories', price: 3450, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p18', name: 'Hand-thrown Dinner Bowl', category: 'Home & living', price: 2250, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p19', name: 'Speckled Stoneware Vase', category: 'Home & living', price: 3800, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p20', name: 'Linen Table Runner', category: 'Home & living', price: 2950, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p21', name: 'Amber Glass Candle', category: 'Home & living', price: 1650, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p22', name: 'Woven Wall Hanging', category: 'Home & living', price: 5200, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p23', name: 'Daily Hydration Serum', category: 'Beauty', price: 2850, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p24', name: 'Cloud-soft Face Cream', category: 'Beauty', price: 2400, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p25', name: 'Rosewater Face Mist', category: 'Beauty', price: 1750, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p26', name: 'Everyday Lip Tint Set', category: 'Beauty', price: 1950, store: { name: 'Sunday Skin', slug: 'sunday-skin' }, imageUrl: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p27', name: 'Botanical Hair Oil', category: 'Beauty', price: 2200, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p28', name: 'Citrus Hand Balm', category: 'Beauty', price: 1250, store: { name: 'Sunday Skin', slug: 'sunday-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p29', name: 'Pocket Film Camera', category: 'Lifestyle', price: 8900, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p30', name: 'Weekend Journal', category: 'Lifestyle', price: 1350, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p31', name: 'Trail Daypack', category: 'Lifestyle', price: 6500, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p32', name: 'Pour-over Coffee Set', category: 'Lifestyle', price: 3600, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p33', name: 'Everyday Yoga Mat', category: 'Lifestyle', price: 4200, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p34', name: 'Wooden Desk Organizer', category: 'Lifestyle', price: 3100, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p35', name: 'Classic White Sneakers', category: 'Clothing', price: 5900, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p36', name: 'Lightweight Everyday Hoodie', category: 'Clothing', price: 4600, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p37', name: 'Relaxed Linen Trousers', category: 'Clothing', price: 4200, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://www.ottwaythelabel.com/cdn/shop/products/DSC09957_b17bb9b6-d625-4018-8367-6dcaf57524f0.jpg?v=1669597664&width=900' },
-  { _id: 'p38', name: 'Everyday Leather Belt', category: 'Accessories', price: 1850, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p39', name: 'Minimal Gold Bracelet', category: 'Accessories', price: 2400, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p40', name: 'Canvas Everyday Backpack', category: 'Accessories', price: 3900, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p41', name: 'Handwoven Cotton Scarf', category: 'Accessories', price: 2100, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p42', name: 'Stoneware Breakfast Plate', category: 'Home & living', price: 1450, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p43', name: 'Textured Ceramic Planter', category: 'Home & living', price: 1950, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p44', name: 'Soft Cotton Throw Blanket', category: 'Home & living', price: 5200, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p45', name: 'Wooden Serving Board', category: 'Home & living', price: 2600, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p46', name: 'Botanical Soy Candle', category: 'Home & living', price: 1550, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p47', name: 'Gentle Daily Cleanser', category: 'Beauty', price: 1650, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p48', name: 'Nourishing Body Butter', category: 'Beauty', price: 2200, store: { name: 'Sunday Skin', slug: 'sunday-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p49', name: 'Everyday Mineral Sunscreen', category: 'Beauty', price: 1950, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p50', name: 'Lavender Bath Soak', category: 'Beauty', price: 1350, store: { name: 'Sunday Skin', slug: 'sunday-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p51', name: 'Pocket Sketchbook Set', category: 'Lifestyle', price: 1250, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p52', name: 'Insulated Travel Tumbler', category: 'Lifestyle', price: 1850, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p53', name: 'Compact Travel Umbrella', category: 'Lifestyle', price: 2200, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p54', name: 'Reusable Market Tote', category: 'Lifestyle', price: 950, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p55', name: 'Pour-over Coffee Dripper', category: 'Home & living', price: 1750, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p56', name: 'Linen Cushion Cover', category: 'Home & living', price: 1850, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p57', name: 'Everyday Hoop Earrings', category: 'Accessories', price: 1650, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p58', name: 'Classic Analog Watch', category: 'Accessories', price: 6400, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p59', name: 'Everyday Oxford Shirt', category: 'Clothing', price: 3850, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p60', name: 'Soft Cotton Sweatshirt', category: 'Clothing', price: 4200, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p61', name: 'Everyday Running Shoes', category: 'Clothing', price: 6800, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p62', name: 'Relaxed Summer Dress', category: 'Clothing', price: 5100, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p63', name: 'Ribbed Everyday Socks', category: 'Clothing', price: 650, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1582966772680-860e372bb558?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p64', name: 'Slim Card Holder', category: 'Accessories', price: 1450, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p65', name: 'Pearl Drop Earrings', category: 'Accessories', price: 1950, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p66', name: 'Everyday Bucket Hat', category: 'Accessories', price: 1250, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p67', name: 'Woven Phone Crossbody', category: 'Accessories', price: 2150, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p68', name: 'Handmade Ceramic Teapot', category: 'Home & living', price: 3400, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p69', name: 'Set of Stoneware Mugs', category: 'Home & living', price: 2800, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p70', name: 'Minimal Table Lamp', category: 'Home & living', price: 5600, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p71', name: 'Cotton Kitchen Towel Set', category: 'Home & living', price: 1350, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p72', name: 'Glass Bud Vase Trio', category: 'Home & living', price: 2250, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p73', name: 'Daily Face Cleanser', category: 'Beauty', price: 1550, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p74', name: 'Rosehip Night Facial Oil', category: 'Beauty', price: 2450, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p75', name: 'Hydrating Lip Balm Duo', category: 'Beauty', price: 950, store: { name: 'Sunday Skin', slug: 'sunday-skin' }, imageUrl: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p76', name: 'Aloe Daily Moisturizer', category: 'Beauty', price: 1850, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p77', name: 'Natural Bath and Body Set', category: 'Beauty', price: 3200, store: { name: 'Sunday Skin', slug: 'sunday-skin' }, imageUrl: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p78', name: 'Stainless Steel Water Bottle', category: 'Lifestyle', price: 1950, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p79', name: 'Daily Planner Notebook', category: 'Lifestyle', price: 1150, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p80', name: 'Compact Yoga Mat', category: 'Lifestyle', price: 3900, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p81', name: 'Reusable Lunch Box', category: 'Lifestyle', price: 1750, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p82', name: 'Compact Bluetooth Speaker', category: 'Lifestyle', price: 5200, store: { name: 'Field Notes Supply', slug: 'field-notes-supply' }, imageUrl: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p83', name: 'Wooden Serving Spoon Set', category: 'Home & living', price: 1250, store: { name: 'Kindred Home', slug: 'kindred-home' }, imageUrl: 'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p84', name: 'Canvas Zip Pouch', category: 'Accessories', price: 850, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p85', name: 'Gentle Hand Wash', category: 'Beauty', price: 1150, store: { name: 'Kindred Skin', slug: 'kindred-skin' }, imageUrl: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p86', name: 'Woven Cotton Bath Towel', category: 'Home & living', price: 2450, store: { name: 'Sunday Studio', slug: 'sunday-studio' }, imageUrl: 'https://images.unsplash.com/photo-1600369671236-e74521d4b6ad?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p87', name: 'Everyday Leather Sandals', category: 'Clothing', price: 4400, store: { name: 'Soft Season', slug: 'soft-season' }, imageUrl: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p88', name: 'Minimal Pendant Necklace', category: 'Accessories', price: 2750, store: { name: 'Morrow Objects', slug: 'morrow-objects' }, imageUrl: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p89', name: 'Small Batch Ground Coffee', category: 'Lifestyle', price: 1450, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85' },
-  { _id: 'p90', name: 'Handmade Incense Holder', category: 'Home & living', price: 1100, store: { name: 'Clay & Co.', slug: 'clay-and-co' }, imageUrl: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85' },
+  {
+    "_id": "perfume-1",
+    "name": "Dior Sauvage Eau de Parfum",
+    "category": "Woody & Fresh",
+    "price": 4850,
+    "store": {
+      "name": "Dior Official",
+      "slug": "dior"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
+    "description": "An iconic raw and noble composition. Radiant top notes burst with the juicy freshness of Reggio di Calabria Bergamot, enveloped in warm smoky accents of Papua New Guinean vanilla absolute."
+  },
+  {
+    "_id": "perfume-2",
+    "name": "Bleu de Chanel Parfum",
+    "category": "Woody & Aromatic",
+    "price": 5600,
+    "store": {
+      "name": "Chanel Official",
+      "slug": "chanel"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
+    "label": "SIGNATURE",
+    "description": "An intensely aromatic, woody fragrance for the man who defies convention. A timeless scent housed in an enigmatic blue bottle with cedar and sandalwood accords."
+  },
+  {
+    "_id": "perfume-3",
+    "name": "Tom Ford Oud Wood",
+    "category": "Luxury Oud",
+    "price": 6800,
+    "store": {
+      "name": "Tom Ford Official",
+      "slug": "tom-ford"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
+    "label": "LUXURY",
+    "description": "Rare exotic rosewood and cardamom give way to a smoky blend of rare oud wood, sandalwood, and vetiver. Tonka bean and amber add warmth and sensuality."
+  },
+  {
+    "_id": "perfume-4",
+    "name": "Creed Aventus Millésime",
+    "category": "Fruity & Smoky",
+    "price": 7200,
+    "store": {
+      "name": "Creed Official",
+      "slug": "creed"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
+    "label": "TOP RATED",
+    "description": "A sensual, audacious, and contemporary scent combining opening notes of blackcurrant and Italian bergamot with a smoky birch, patchouli, and Moroccan jasmine base."
+  },
+  {
+    "_id": "perfume-5",
+    "name": "Baccarat Rouge 540 Extrait",
+    "category": "Amber Floral",
+    "price": 7500,
+    "store": {
+      "name": "Maison Francis Kurkdjian Official",
+      "slug": "maison-francis-kurkdjian"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=900&q=85",
+    "label": "EXCLUSIVE",
+    "description": "Luminous and sophisticated, with breezy jasmine petals and radiant saffron that carry mineral facets of ambergris and woody tones of freshly cut cedar."
+  },
+  {
+    "_id": "perfume-6",
+    "name": "YSL Libre Eau de Parfum",
+    "category": "Floral & Sweet",
+    "price": 4950,
+    "store": {
+      "name": "Yves Saint Laurent Official",
+      "slug": "yves-saint-laurent"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
+    "description": "The perfume of a strong, bold woman living her roaring freedom. French lavender essence combines with the sensuality of Moroccan orange blossom and daring musk."
+  },
+  {
+    "_id": "perfume-7",
+    "name": "Giorgio Armani Acqua Di Giò Profondo",
+    "category": "Aquatic & Fresh",
+    "price": 4500,
+    "store": {
+      "name": "Giorgio Armani Official",
+      "slug": "giorgio-armani"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "label": "SUMMER FAVORITE",
+    "description": "A captivating dive into the profoundness of the ocean. Marine notes awaken the senses alongside green mandarin, rosemary, lavender, and woody patchouli."
+  },
+  {
+    "_id": "perfume-8",
+    "name": "Versace Eros Flame Eau de Parfum",
+    "category": "Spicy & Woody",
+    "price": 3850,
+    "store": {
+      "name": "Versace Official",
+      "slug": "versace"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
+    "label": "POPULAR",
+    "description": "A fragrance for a passionate, confident man. Olfactory notes of Italian lemon, pepperwood, rosemary, cedarwood, and vetiver create an unforgettable trail."
+  },
+  {
+    "_id": "perfume-9",
+    "name": "Tom Ford Black Orchid",
+    "category": "Dark & Sensual",
+    "price": 6200,
+    "store": {
+      "name": "Tom Ford Official",
+      "slug": "tom-ford"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
+    "label": "ICONIC",
+    "description": "A luxurious and sensual fragrance of rich dark accords and an alluring potion of black orchids, spice, ylang-ylang, and golden amber."
+  },
+  {
+    "_id": "perfume-10",
+    "name": "Maison Margiela Replica Jazz Club",
+    "category": "Warm & Spicy",
+    "price": 5400,
+    "store": {
+      "name": "Maison Margiela Official",
+      "slug": "maison-margiela"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
+    "label": "NICHE PICK",
+    "description": "Heady cocktails and rich cigar smoke in a cozy Brooklyn jazz club. Notes of pink pepper, rum absolute, tobacco leaf, and bourbon vanilla."
+  },
+  {
+    "_id": "perfume-11",
+    "name": "Chanel Coco Mademoiselle Intense",
+    "category": "Floral & Sweet",
+    "price": 5800,
+    "store": {
+      "name": "Chanel Official",
+      "slug": "chanel"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
+    "description": "The essence of a bold, free woman. An amber woody fragrance with an extreme character centered around an overdose of patchouli warmed by amber, vanilla, and tonka bean."
+  },
+  {
+    "_id": "perfume-12",
+    "name": "Dior J’adore L’Or Essence",
+    "category": "Floral & Sweet",
+    "price": 4600,
+    "store": {
+      "name": "Dior Official",
+      "slug": "dior"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
+    "label": "FEMININE",
+    "description": "An ode to women and their audacity. Grandiflorum jasmine and Centifolia rose from Grasse mingle with exotic Tahitian vanilla and creamy tonka bean."
+  },
+  {
+    "_id": "perfume-13",
+    "name": "Gucci Bloom Ambrosia di Fiori",
+    "category": "Floral & Sweet",
+    "price": 4200,
+    "store": {
+      "name": "Gucci Official",
+      "slug": "gucci"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=900&q=85",
+    "label": "SPRING CLASSIC",
+    "description": "An intense vibrant bouquet featuring precious velvety orris root and Damascena rose alongside jasmine bud extract and tuberose."
+  },
+  {
+    "_id": "perfume-14",
+    "name": "YSL Y Eau de Parfum Intense",
+    "category": "Woody & Fresh",
+    "price": 4700,
+    "store": {
+      "name": "Yves Saint Laurent Official",
+      "slug": "yves-saint-laurent"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
+    "label": "TRENDING",
+    "description": "Deeply fresh and intensely powerful. Sage and juniper from Provence are amplified by an elegant cedarwood base and rich Indonesian patchouli."
+  },
+  {
+    "_id": "perfume-15",
+    "name": "Dolce & Gabbana Light Blue Intense",
+    "category": "Aquatic & Fresh",
+    "price": 3600,
+    "store": {
+      "name": "Dolce & Gabbana Official",
+      "slug": "dolce-gabbana"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85",
+    "label": "CRISP & FRESH",
+    "description": "Sun-drenched Mediterranean escape. Crisp Granny Smith apple and zesty Calabrian lemon meet marigold and luminous amber woods."
+  },
+  {
+    "_id": "perfume-16",
+    "name": "Jo Malone Wood Sage & Sea Salt",
+    "category": "Aquatic & Fresh",
+    "price": 3900,
+    "store": {
+      "name": "Jo Malone London Official",
+      "slug": "jo-malone-london"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1527632911563-ee5b6d53465b?auto=format&fit=crop&w=900&q=85",
+    "label": "CLEAN SCENT",
+    "description": "Escape the everyday along the windswept shore. Waves breaking white, air fresh with sea salt and spray, alive with the mineral scent of the rugged cliffs."
+  },
+  {
+    "_id": "perfume-17",
+    "name": "Byredo Gypsy Water",
+    "category": "Woody & Fresh",
+    "price": 6500,
+    "store": {
+      "name": "Byredo Official",
+      "slug": "byredo"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "NICHE LUXURY",
+    "description": "An ode to the beauty of Romany culture, free-spirited and connected to the earth. Bergamot, juniper berries, incense, pine needles, and amber."
+  },
+  {
+    "_id": "perfume-18",
+    "name": "Prada Paradoxe Intense",
+    "category": "Floral & Amber",
+    "price": 4850,
+    "store": {
+      "name": "Prada Official",
+      "slug": "prada"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
+    "label": "JUST IN",
+    "description": "An augmentation of floral power with an infusion of jasmine superessence and warm Ambrofix, grounded by a bold moss accord."
+  },
+  {
+    "_id": "perfume-19",
+    "name": "Paco Rabanne 1 Million Elixir",
+    "category": "Warm & Spicy",
+    "price": 3950,
+    "store": {
+      "name": "Paco Rabanne Official",
+      "slug": "paco-rabanne"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
+    "label": "BESTSELLER",
+    "description": "Peak intensity in a solid gold bar. Rich Turkish damascena rose, osmanthus, wild tonka beans, and precious davana liqueur."
+  },
+  {
+    "_id": "perfume-20",
+    "name": "Carolina Herrera Good Girl Velvet Fatale",
+    "category": "Floral & Sweet",
+    "price": 4300,
+    "store": {
+      "name": "Carolina Herrera Official",
+      "slug": "carolina-herrera"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
+    "label": "FEMME FATALE",
+    "description": "It’s so good to be bad. The iconic stiletto bottle filled with almond, coffee, tuberose, tonka bean, and cacao."
+  },
+  {
+    "_id": "perfume-21",
+    "name": "Valentino Born In Roma Donna Intense",
+    "category": "Floral & Amber",
+    "price": 5100,
+    "store": {
+      "name": "Valentino Official",
+      "slug": "valentino"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=900&q=85",
+    "label": "HAUTE COUTURE",
+    "description": "An magnetic ambery floral pushing vanilla bourbon and luminous jasmine into modern haute couture extravagance."
+  },
+  {
+    "_id": "perfume-22",
+    "name": "Lancôme La Vie Est Belle Iris Absolu",
+    "category": "Floral & Sweet",
+    "price": 4400,
+    "store": {
+      "name": "Lancôme Official",
+      "slug": "lanc-me"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=900&q=85",
+    "label": "GIFT FAVORITE",
+    "description": "Life is beautiful. A concentrated tribute to the iconic Iris Pallida flower, spun with gourmand spun sugar and warm patchouli."
+  },
+  {
+    "_id": "perfume-23",
+    "name": "Viktor & Rolf Flowerbomb Ruby Orchid",
+    "category": "Floral & Sweet",
+    "price": 4600,
+    "store": {
+      "name": "Viktor & Rolf Official",
+      "slug": "viktor-rolf"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "label": "SEDUCTIVE",
+    "description": "A sensual, magnetic floral explosion inspired by the theatrical world of burlesque with ruby orchid and red vanilla bean."
+  },
+  {
+    "_id": "perfume-24",
+    "name": "Kilian Angels’ Share",
+    "category": "Gourmand & Warm",
+    "price": 7400,
+    "store": {
+      "name": "Kilian Paris Official",
+      "slug": "kilian-paris"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
+    "label": "CONNOISSEUR",
+    "description": "Heritage cognac essence distilled from actual liquor, infused with cinnamon bark, oak absolute, tonka bean, and praline."
+  },
+  {
+    "_id": "perfume-25",
+    "name": "Hermès Terre d’Hermès Parfum",
+    "category": "Woody & Mineral",
+    "price": 4900,
+    "store": {
+      "name": "Hermès Official",
+      "slug": "herm-s"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
+    "label": "GENTLEMAN",
+    "description": "Narrating the relationship between man and earth, an alliance of citrus and flint with cedar, benzoin, and shiso."
+  },
+  {
+    "_id": "perfume-26",
+    "name": "Armani Si Passione Éclat",
+    "category": "Floral & Fruity",
+    "price": 4500,
+    "store": {
+      "name": "Giorgio Armani Official",
+      "slug": "giorgio-armani"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
+    "label": "ROMANTIC",
+    "description": "A sparkling and modern feminine rose bouquet electrified with juicy blackcurrant and Centifolia rose from Grasse."
+  },
+  {
+    "_id": "perfume-27",
+    "name": "Jean Paul Gaultier Le Male Elixir",
+    "category": "Warm & Spicy",
+    "price": 4200,
+    "store": {
+      "name": "Jean Paul Gaultier Official",
+      "slug": "jean-paul-gaultier"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=900&q=85",
+    "label": "MAGNETIC",
+    "description": "A burning glow of lavender, mint, honey-sweet benzoin, and rich tonka bean on a sailor’s gilded torso."
+  },
+  {
+    "_id": "perfume-28",
+    "name": "Burberry Goddess Eau de Parfum",
+    "category": "Gourmand Vanilla",
+    "price": 4100,
+    "store": {
+      "name": "Burberry Official",
+      "slug": "burberry"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
+    "label": "NEW CLASSIC",
+    "description": "A unique aromatic gourmand led by a powerful trio of distinct vanillas enriched with luminous lavender."
+  },
+  {
+    "_id": "perfume-29",
+    "name": "Roja Parfums Elysium Pour Homme",
+    "category": "Ultra Luxury Citrus",
+    "price": 7600,
+    "store": {
+      "name": "Roja Parfums Official",
+      "slug": "roja-parfums"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=900&q=85",
+    "label": "ELITE",
+    "description": "An ultra-rare elixir of pure elegance. Zesty grapefruit and lime meet pink pepper, vetiver, and rich ambergris."
+  },
+  {
+    "_id": "perfume-30",
+    "name": "Amouage Interlude Man (The Blue Beast)",
+    "category": "Luxury Oud",
+    "price": 7800,
+    "store": {
+      "name": "Amouage Official",
+      "slug": "amouage"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
+    "label": "ROYAL OUD",
+    "description": "Frankincense and myrrh in a harmonious storm of oregano, pimento berry, leather, oud, and sandalwood."
+  },
+  {
+    "_id": "perfume-31",
+    "name": "Parfums de Marly Layton Royal Essence",
+    "category": "Warm & Spicy",
+    "price": 7200,
+    "store": {
+      "name": "Parfums de Marly Official",
+      "slug": "parfums-de-marly"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85",
+    "label": "NOBILITY",
+    "description": "The grandeur of the Versailles court. Bergamot, apple, lavender, geranium, violet, and caramelized vanilla."
+  },
+  {
+    "_id": "perfume-32",
+    "name": "Xerjoff Naxos 1861",
+    "category": "Warm & Spicy",
+    "price": 7500,
+    "store": {
+      "name": "Xerjoff Official",
+      "slug": "xerjoff"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1527632911563-ee5b6d53465b?auto=format&fit=crop&w=900&q=85",
+    "label": "MASTERPIECE",
+    "description": "A celebration of Mediterranean Sicily. Honeyed tobacco leaf, vibrant citrus, cinnamon, cashmere, and rich vanilla."
+  },
+  {
+    "_id": "perfume-33",
+    "name": "Le Labo Santal 33",
+    "category": "Woody & Smoky",
+    "price": 6900,
+    "store": {
+      "name": "Le Labo Official",
+      "slug": "le-labo"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "CULT FAVORITE",
+    "description": "An intoxicating spirit of the American West. Australian sandalwood, cedarwood, cardamom, iris, and leather."
+  },
+  {
+    "_id": "perfume-34",
+    "name": "Diptyque Philosykos Eau de Parfum",
+    "category": "Green & Woody",
+    "price": 5200,
+    "store": {
+      "name": "Diptyque Official",
+      "slug": "diptyque"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
+    "label": "PARISIAN CHIC",
+    "description": "An ode to the whole fig tree: green freshness of leaves, milky flavor of ripe figs, and density of white cedar wood."
+  },
+  {
+    "_id": "perfume-35",
+    "name": "Tom Ford Lost Cherry",
+    "category": "Fruity & Gourmand",
+    "price": 7300,
+    "store": {
+      "name": "Tom Ford Official",
+      "slug": "tom-ford"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85",
+    "label": "INTOXICATING",
+    "description": "A full-bodied journey into the once-forbidden. Black cherry infused with bitter almond, Turkish rose, and roasted tonka."
+  },
+  {
+    "_id": "perfume-36",
+    "name": "Chanel Allure Homme Sport Eau Extrême",
+    "category": "Fresh & Woody",
+    "price": 4900,
+    "store": {
+      "name": "Chanel Official",
+      "slug": "chanel"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
+    "label": "ATHLETIC LUXURY",
+    "description": "An intense rush of adrenaline. Sparkling Sicilian mandarin pairs with spicy Moroccan cypress and sensual white musk."
+  },
+  {
+    "_id": "perfume-37",
+    "name": "Dior Homme Intense Eau de Parfum",
+    "category": "Iris & Woody",
+    "price": 4750,
+    "store": {
+      "name": "Dior Official",
+      "slug": "dior"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=900&q=85",
+    "label": "EVENING SCENT",
+    "description": "The pinnacle of masculine sophistication. Tuscan iris enhanced by ambrette seed, Virginia cedar, and vetiver."
+  },
+  {
+    "_id": "perfume-38",
+    "name": "Acqua di Parma Colonia Essenza",
+    "category": "Aquatic & Fresh",
+    "price": 4300,
+    "store": {
+      "name": "Acqua di Parma Official",
+      "slug": "acqua-di-parma"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=900&q=85",
+    "label": "ITALIAN HERITAGE",
+    "description": "Italian sunshine bottled. Classic Golden Fruits citrus balanced by rosemary, delicate floral heart, and woody vetiver."
+  },
+  {
+    "_id": "perfume-39",
+    "name": "Guerlain Shalimar Millésime Iris",
+    "category": "Amber & Powder",
+    "price": 4600,
+    "store": {
+      "name": "Guerlain Official",
+      "slug": "guerlain"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "label": "VINTAGE ICON",
+    "description": "The legendary temple of love. Radiant bergamot, powdery iris, and an intoxicating overdose of pure Guerlinade vanilla."
+  },
+  {
+    "_id": "perfume-40",
+    "name": "Montblanc Explorer Platinum",
+    "category": "Woody & Aromatic",
+    "price": 2900,
+    "store": {
+      "name": "Montblanc Official",
+      "slug": "montblanc"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85",
+    "label": "GREAT VALUE",
+    "description": "A tribute to the majestic mountains. Crispy violet leaves, herbaceous clary sage, and intense Alaskan cedarwood."
+  },
+  {
+    "_id": "perfume-41",
+    "name": "Club de Nuit Intense Man Pure Parfum",
+    "category": "Fruity & Smoky",
+    "price": 2450,
+    "store": {
+      "name": "Armaf Official",
+      "slug": "armaf"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85",
+    "label": "BEAST MODE",
+    "description": "Legendary powerhouse fragrance. Fresh lemon, blackcurrant, pineapple, birch, jasmine, and rich ambergris base."
+  },
+  {
+    "_id": "perfume-42",
+    "name": "Lattafa Khamrah Qahwa",
+    "category": "Warm & Spicy",
+    "price": 2800,
+    "store": {
+      "name": "Lattafa Official",
+      "slug": "lattafa"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85",
+    "label": "VIRAL HIT",
+    "description": "Arabian hospitality in a crystal flask. Spiced coffee, dates, praline, cinnamon, tonka bean, and bourbon vanilla."
+  },
+  {
+    "_id": "perfume-43",
+    "name": "Rasasi Hawas for Him",
+    "category": "Aquatic & Fresh",
+    "price": 3400,
+    "store": {
+      "name": "Rasasi Official",
+      "slug": "rasasi"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=900&q=85",
+    "label": "HOT SELLER",
+    "description": "Adventurous aquatic blend. Italian citrus, crisp green apple, plum, cardamom, marine accord, and driftwood."
+  },
+  {
+    "_id": "perfume-44",
+    "name": "Afnan 9 PM Elixir",
+    "category": "Sweet & Warm",
+    "price": 2600,
+    "store": {
+      "name": "Afnan Official",
+      "slug": "afnan"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=85",
+    "label": "NIGHTOUT PICK",
+    "description": "The ultimate party fragrance. Sweet apple, wild cinnamon, wild lavender, orange blossom, amber, and patchouli."
+  },
+  {
+    "_id": "perfume-45",
+    "name": "Mancera Cedrat Boise Intense",
+    "category": "Citrus & Woody",
+    "price": 5100,
+    "store": {
+      "name": "Mancera Official",
+      "slug": "mancera"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=900&q=85",
+    "label": "NICHE FAVORITE",
+    "description": "Vibrant Sicilian citrus burst with blackcurrant, spices, leather, patchouli, Cambodian oud, and white musk."
+  },
+  {
+    "_id": "perfume-46",
+    "name": "Montale Chocolate Greedy",
+    "category": "Gourmand & Warm",
+    "price": 4900,
+    "store": {
+      "name": "Montale Official",
+      "slug": "montale"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85",
+    "label": "DELICIOUS",
+    "description": "Decadent mouth-watering dark chocolate truffle, rich cocoa butter, roasted tonka bean, and orange zest."
+  },
+  {
+    "_id": "perfume-47",
+    "name": "Calvin Klein CK One Gold Collector",
+    "category": "Fresh & Woody",
+    "price": 2200,
+    "store": {
+      "name": "Calvin Klein Official",
+      "slug": "calvin-klein"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85",
+    "label": "DAILY ESSENTIAL",
+    "description": "A seasonal golden tribute. Juicy fig, neroli, luminous jasmine, sage, and radiant vetiver woods."
+  },
+  {
+    "_id": "perfume-48",
+    "name": "Davidoff Cool Water Reborn",
+    "category": "Aquatic & Fresh",
+    "price": 1950,
+    "store": {
+      "name": "Davidoff Official",
+      "slug": "davidoff"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1527632911563-ee5b6d53465b?auto=format&fit=crop&w=900&q=85",
+    "label": "AFFORDABLE",
+    "description": "The timeless oceanic icon reinvented with upcycled rosemary, green galbanum, and sustainable Haitian vetiver."
+  },
+  {
+    "_id": "perfume-49",
+    "name": "Hugo Boss Boss Bottled Elixir",
+    "category": "Woody & Spicy",
+    "price": 3700,
+    "store": {
+      "name": "Hugo Boss Official",
+      "slug": "hugo-boss"
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=85",
+    "label": "MODERN MAN",
+    "description": "Intense and sophisticated. Frankincense and cardamom warm the rich patchouli and cedarwood heart."
+  }
 ];
-const categories = ['Everything', 'Clothing', 'Accessories', 'Home & living', 'Beauty', 'Lifestyle'];
+const categories = ["Everything","Woody & Fresh","Luxury Oud","Floral & Sweet","Warm & Spicy","Aquatic & Fresh","Amber Floral"];
 const formatPrice = (value) => `Rs. ${Number(value || 0).toLocaleString('en-PK')}`;
 
 export default function Home() {
