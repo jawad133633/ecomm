@@ -23,3 +23,4 @@ if (src.includes(target)) {
 
 fs.writeFileSync(homePath, src);
 console.log('✅ Successfully added missing state variables to Home.jsx');
+

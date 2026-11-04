@@ -9,7 +9,7 @@ const verifiedImages = [
   'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85', // Coco Chanel with roses
   'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85', // Chanel N°5
   'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85', // Coco Noir on red flower
-  'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85', // Golden amber luxury flacon
+  'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85', // Golden amber luxury flacon
   'https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=900&q=85', // Luxury perfume in hand
   'https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85', // Coco Chanel on rose petals
   'https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=85', // Dolce & Gabbana The One
@@ -20,7 +20,7 @@ const verifiedImages = [
   'https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=85', // Versace Eros turquoise flacon
   'https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=900&q=85', // Hugo Boss Boss Bottled
   'https://images.unsplash.com/photo-1582211594533-268f4f1edcb9?auto=format&fit=crop&w=900&q=85', // Zara Seoul clean bottle
-  'https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85', // Giorgio Armani Acqua Di Giò
+  'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85', // Giorgio Armani Acqua Di Giò
   'https://images.unsplash.com/photo-1592914610354-fd354ea45e48?auto=format&fit=crop&w=900&q=85', // Coco Mademoiselle on black lace
 ];
 
@@ -53,7 +53,7 @@ const perfumeBrands = [
     brand: 'Maison Francis Kurkdjian',
     models: ['Baccarat Rouge 540', 'Grand Soir', 'Gentle Fluidity Silver', 'Gentle Fluidity Gold', 'Aqua Universalis', 'Oud Satin Mood', '724', 'Amyris Homme', 'L’Homme À la Rose', 'Baccarat Rouge 540 Extrait'],
     category: 'Amber Floral',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Yves Saint Laurent',
@@ -65,7 +65,7 @@ const perfumeBrands = [
     brand: 'Giorgio Armani',
     models: ['Acqua Di Giò Profondo', 'Acqua Di Giò Parfum', 'Armani Code', 'Sì Passione', 'My Way', 'Stronger With You Intensely', 'Stronger With You Absolutely', 'Rose d’Arabie', 'Oud Royal', 'Acqua Di Giò Absolu'],
     category: 'Aquatic & Fresh',
-    defaultImg: 'https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Versace',
@@ -77,7 +77,7 @@ const perfumeBrands = [
     brand: 'Parfums de Marly',
     models: ['Layton', 'Pegasus Exclusif', 'Herod', 'Carlisle', 'Percival', 'Delina Exclusif', 'Sedley', 'Haltane', 'Greenley', 'Althair', 'Oajan', 'Kalan'],
     category: 'Warm & Spicy',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Xerjoff',
@@ -95,7 +95,7 @@ const perfumeBrands = [
     brand: 'Amouage',
     models: ['Interlude Man', 'Reflection Man', 'Jubilation XXV', 'Guidance', 'Memoir Man', 'Epic Man', 'Overture Man', 'Interlude Black Iris', 'Royal Tobacco', 'Enclave'],
     category: 'Luxury Oud',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Byredo',
@@ -119,7 +119,7 @@ const perfumeBrands = [
     brand: 'Roja Parfums',
     models: ['Elysium Pour Homme', 'Enigma Pour Homme', 'Danger Pour Homme', 'Scandal', 'Apex', 'Burlington 1819', 'Oceania', 'Amber Aoud', 'Sweetie Aoud'],
     category: 'Luxury Oud',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Mancera',
@@ -137,7 +137,7 @@ const perfumeBrands = [
     brand: 'Nishane',
     models: ['Hacivat', 'Ani', 'Fan Your Flames', 'Hundred Silent Ways', 'Wulong Cha', 'B-612', 'Ambra Calabria', 'Ege', 'Kredo', 'Papilefiko'],
     category: 'Woody & Fresh',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Initio Parfums',
@@ -155,7 +155,7 @@ const perfumeBrands = [
     brand: 'Rasasi',
     models: ['Hawas for Him', 'Hawas Ice', 'Hawas for Her', 'La Yuqawam Pour Homme', 'Shuhrah Pour Homme', 'Daarej Pour Homme', 'Al Wisam Day', 'Fattan Pour Homme', 'Tasmeem'],
     category: 'Aquatic & Fresh',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Afnan',
@@ -233,13 +233,13 @@ const perfumeBrands = [
     brand: 'Acqua di Parma',
     models: ['Colonia Essenza', 'Colonia Futura', 'Blu Mediterraneo Fico di Amalfi', 'Bergamotto di Calabria', 'Mirto di Panarea', 'Oud & Spice', 'Signatures of the Sun Zafferano', 'Colonia Club'],
     category: 'Aquatic & Fresh',
-    defaultImg: 'https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Penhaligon’s',
     models: ['The Tragedy of Lord George', 'Halfeti', 'Halfeti Cedar', 'The Blazing Mr Sam', 'The Bewitching Yasmine', 'Juniper Sling', 'Endymion Concentré', 'Sartorial'],
     category: 'Luxury Oud',
-    defaultImg: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85'
+    defaultImg: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85'
   },
   {
     brand: 'Maison Margiela',

@@ -65,7 +65,7 @@ export const demoProducts = [
       "name": "Baccarat Official",
       "slug": "baccarat"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
     "label": "EXCLUSIVE",
     "description": "Luminous and sophisticated, with breezy jasmine petals and radiant saffron that carry mineral facets of ambergris and woody tones of freshly cut cedar."
   },
@@ -91,7 +91,7 @@ export const demoProducts = [
       "name": "Giorgio Official",
       "slug": "giorgio"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "A captivating dive into the profoundness of the ocean. Marine notes awaken the senses alongside green mandarin, rosemary, lavender, and woody patchouli."
   },
@@ -208,7 +208,7 @@ export const demoProducts = [
       "name": "Jo Official",
       "slug": "jo"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "Escape the everyday along the windswept shore. Waves breaking white, air fresh with sea salt and spray, alive with the mineral scent of the rugged cliffs."
   },
@@ -286,7 +286,7 @@ export const demoProducts = [
       "name": "Lancôme Official",
       "slug": "lancôme"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "Life is beautiful. A concentrated tribute to the iconic Iris Pallida flower, spun with gourmand spun sugar and warm patchouli."
   },
@@ -429,7 +429,7 @@ export const demoProducts = [
       "name": "Le Official",
       "slug": "le"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
     "label": "EXCLUSIVE",
     "description": "An intoxicating spirit of the American West. Australian sandalwood, cedarwood, cardamom, iris, and leather."
   },
@@ -494,7 +494,7 @@ export const demoProducts = [
       "name": "Acqua Official",
       "slug": "acqua"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "Italian sunshine bottled. Classic Golden Fruits citrus balanced by rosemary, delicate floral heart, and woody vetiver."
   },
@@ -507,7 +507,7 @@ export const demoProducts = [
       "name": "Guerlain Official",
       "slug": "guerlain"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "The legendary temple of love. Radiant bergamot, powdery iris, and an intoxicating overdose of pure Guerlinade vanilla."
   },
@@ -559,7 +559,7 @@ export const demoProducts = [
       "name": "Rasasi Official",
       "slug": "rasasi"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85",
     "label": "BESTSELLER",
     "description": "Adventurous aquatic blend. Italian citrus, crisp green apple, plum, cardamom, marine accord, and driftwood."
   },
@@ -650,7 +650,7 @@ export const demoProducts = [
       "name": "Tom Official",
       "slug": "tom"
     },
-    "imageUrl": "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85",
     "label": "EXCLUSIVE",
     "description": ""
   }

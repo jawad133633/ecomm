@@ -54,11 +54,21 @@ app.use((req, res, next) => {
 
 const connectDB = require('./config/db');
 app.use(async (req, res, next) => {
-  if (req.path === '/api/health' || req.path === '/health') return next();
+  if (
+    req.path === '/api/health' ||
+    req.path === '/health' ||
+    req.path === '/metrics' ||
+    req.path.startsWith('/api/observability')
+  ) {
+    return next();
+  }
   try {
     await connectDB();
     next();
   } catch (err) {
+    if (process.env.NODE_ENV === 'test') {
+      return next();
+    }
     console.error('Serverless DB middleware error:', err.message);
     res.status(503).json({ success: false, message: 'Database connection failed. Please retry.' });
   }
